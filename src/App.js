@@ -123,6 +123,80 @@ function App() {
         </div>
       </section>
 
+      <div className="modal fade show" role="dialog" tabIndex="-1" id="modal-1" aria-modal="true">
+        <div className="modal-dialog modal-xl" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h4 className="modal-title"></h4>
+              <button className="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+            </div>
+            <div className="modal-body">
+              <div className="container">
+                <div className="row justify-content-center align-items-center">
+                  <div className="col-md-6">
+                    <div className="carousel slide carousel-dark" data-bs-ride="false" id="carousel-1">
+                      <div className="carousel-inner">
+                        <div className="carousel-item active"><img className="w-100 d-block"
+                                                                   src="/placeholder%20image.png" alt="Slide Image"/>
+                        </div>
+                        <div className="carousel-item"><img className="w-100 d-block"
+                                                            src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
+                                                            alt="Slide Image"/></div>
+                        <div className="carousel-item"><img className="w-100 d-block"
+                                                            src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
+                                                            alt="Slide Image"/></div>
+                      </div>
+                      <div><a className="carousel-control-prev" href="#carousel-1" role="button"
+                              data-bs-slide="prev"><span className="carousel-control-prev-icon"></span><span
+                          className="visually-hidden">Previous</span></a><a className="carousel-control-next"
+                                                                            href="#carousel-1" role="button"
+                                                                            data-bs-slide="next"><span
+                          className="carousel-control-next-icon"></span><span
+                          className="visually-hidden">Next</span></a></div>
+                      <div className="carousel-indicators">
+                        <button type="button" data-bs-target="#carousel-1" data-bs-slide-to="0"
+                                className="active"></button>
+                        <button type="button" data-bs-target="#carousel-1" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#carousel-1" data-bs-slide-to="2"></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-5 col-lg-5">
+                    <div id="modal-text-content-1" className="p-4">
+                      <h1>Heading</h1>
+                      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                        consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
+                        qui dolorem.</p>
+                      <div>
+                        <p><strong>Client: </strong>Anonymous.<br/><strong>Duration: </strong>0 years.<br/><strong>Project
+                          type: </strong>Unknown.</p><span><strong>Activities:</strong></span>
+                        <ul>
+                          <li>Sed ut perspiciatis unde omnis iste natus error sit voluptate.</li>
+                          <li>Sed ut perspiciatis unde omnis iste natus error sit voluptate.</li>
+                          <li>Sed ut perspiciatis unde omnis iste natus error sit voluptate.</li>
+                          <li>Sed ut perspiciatis unde omnis iste natus error sit voluptate.</li>
+                        </ul>
+                      </div>
+                      <div id="modal-stack-list">
+                        <div className="mt-5 tags text-start"><span
+                            className="badge rounded-pill bg-secondary me-2">Python</span><span
+                            className="badge rounded-pill bg-secondary me-2">Django</span><span
+                            className="badge rounded-pill bg-secondary me-2">CSS</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="modal-footer">
+              <button className="btn btn-light" type="button" data-bs-dismiss="modal">Close</button>
+              <button className="btn btn-primary" type="button">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
 
       <section id="work-gallery" className="photo-gallery py-5 py-xl-5">
         <div className="container"style={{ background: 'url("/background-container-work-gallery.png") bottom/contain' }}>
@@ -145,8 +219,8 @@ function App() {
                     <span className="badge rounded-pill bg-primary me-2">2024</span>
                    </div>
                 </div>
-                <div className="flip-card-back"><a className="text-decoration-none"
-                                                   href="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
+                <div className="flip-card-back"><a className="text-decoration-none" data-bs-target="#modal-1"
+                                                   data-bs-toggle="modal">
                   <div className="flip-card-back-body image-gallery"
                         style={{ background: 'url("/background-card.png") center/cover no-repeat' }}>
                     <h2 style={{ textShadow: '-2px 1px 4px rgba(0, 0, 0, 0.44)', color: 'rgb(58, 58, 58)', letterSpacing: '4px' }}>Lorem
@@ -165,8 +239,8 @@ function App() {
                     <span className="badge rounded-pill bg-primary me-2">2024</span>
                    </div>
                 </div>
-                <div className="flip-card-back"><a className="text-decoration-none"
-                                                   href="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
+                <div className="flip-card-back"><a className="text-decoration-none" data-bs-target="#modal-1"
+                                                   data-bs-toggle="modal">
                   <div className="flip-card-back-body image-gallery"
                         style={{ background: 'url("/background-card.png") center/cover no-repeat' }}>
                     <h2 style={{ textShadow: '-2px 1px 4px rgba(0, 0, 0, 0.44)', color: 'rgb(58, 58, 58)', letterSpacing: '4px' }}>Lorem
@@ -186,8 +260,8 @@ function App() {
                     <span className="badge rounded-pill bg-primary me-2">2024</span>
                    </div>
                 </div>
-                <div className="flip-card-back"><a className="text-decoration-none"
-                                                   href="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
+                <div className="flip-card-back"><a className="text-decoration-none" data-bs-target="#modal-1"
+                                                   data-bs-toggle="modal">
                   <div className="flip-card-back-body image-gallery"
                         style={{ background: 'url("/background-card.png") center/cover no-repeat' }}>
                     <h2 style={{ textShadow: '-2px 1px 4px rgba(0, 0, 0, 0.44)', color: 'rgb(58, 58, 58)', letterSpacing: '4px' }}>Lorem
@@ -196,132 +270,6 @@ function App() {
                 </a></div>
               </div>
             </div>
-
-                 <div className="col item flip-card mb-4">
-              <div className="flip-card-inner">
-                <div className="flip-card-front"><img className="img-fluid image-gallery"
-                                                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"/>
-                  <div className="my-2 tags text-start">
-                    <span className="badge rounded-pill bg-success tag-project-type me-2">API</span>
-                    <span className="badge rounded-pill bg-primary me-2">2024</span>
-                   </div>
-                </div>
-                <div className="flip-card-back"><a className="text-decoration-none"
-                                                   href="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
-                  <div className="flip-card-back-body image-gallery"
-                        style={{ background: 'url("/background-card.png") center/cover no-repeat' }}>
-                    <h2 style={{ textShadow: '-2px 1px 4px rgba(0, 0, 0, 0.44)', color: 'rgb(58, 58, 58)', letterSpacing: '4px' }}>Lorem
-                      Ipsum</h2>
-                  </div>
-                </a></div>
-              </div>
-            </div>
-
-            <div className="col item flip-card mb-4">
-              <div className="flip-card-inner">
-                <div className="flip-card-front"><img className="img-fluid image-gallery"
-                                                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"/>
-                  <div className="my-2 tags text-start">
-                    <span className="badge rounded-pill tag-project-type me-2" style={{background: '#BB0087'}}>WEB INTEGRATION</span>
-                    <span className="badge rounded-pill bg-primary me-2">2024</span>
-                   </div>
-                </div>
-                <div className="flip-card-back"><a className="text-decoration-none"
-                                                   href="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
-                  <div className="flip-card-back-body image-gallery"
-                        style={{ background: 'url("/background-card.png") center/cover no-repeat' }}>
-                    <h2 style={{ textShadow: '-2px 1px 4px rgba(0, 0, 0, 0.44)', color: 'rgb(58, 58, 58)', letterSpacing: '4px' }}>Lorem
-                      Ipsum</h2>
-                  </div>
-                </a></div>
-              </div>
-            </div>
-
-
-              <div className="col item flip-card mb-4">
-              <div className="flip-card-inner">
-                <div className="flip-card-front"><img className="img-fluid image-gallery"
-                                                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"/>
-                  <div className="my-2 tags text-start">
-                    <span className="badge rounded-pill tag-project-type me-2" style={{background: '#0ACF83'}}>AUTOMATION</span>
-                    <span className="badge rounded-pill bg-primary me-2">2024</span>
-                   </div>
-                </div>
-                <div className="flip-card-back"><a className="text-decoration-none"
-                                                   href="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
-                  <div className="flip-card-back-body image-gallery"
-                        style={{ background: 'url("/background-card.png") center/cover no-repeat' }}>
-                    <h2 style={{ textShadow: '-2px 1px 4px rgba(0, 0, 0, 0.44)', color: 'rgb(58, 58, 58)', letterSpacing: '4px' }}>Lorem
-                      Ipsum</h2>
-                  </div>
-                </a></div>
-              </div>
-            </div>
-
-                 <div className="col item flip-card mb-4">
-              <div className="flip-card-inner">
-                <div className="flip-card-front"><img className="img-fluid image-gallery"
-                                                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"/>
-                  <div className="my-2 tags text-start">
-                    <span className="badge rounded-pill bg-success tag-project-type me-2">API</span>
-                    <span className="badge rounded-pill bg-primary me-2">2024</span>
-                   </div>
-                </div>
-                <div className="flip-card-back"><a className="text-decoration-none"
-                                                   href="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
-                  <div className="flip-card-back-body image-gallery"
-                        style={{ background: 'url("/background-card.png") center/cover no-repeat' }}>
-                    <h2 style={{ textShadow: '-2px 1px 4px rgba(0, 0, 0, 0.44)', color: 'rgb(58, 58, 58)', letterSpacing: '4px' }}>Lorem
-                      Ipsum</h2>
-                  </div>
-                </a></div>
-              </div>
-            </div>
-
-            <div className="col item flip-card mb-4">
-              <div className="flip-card-inner">
-                <div className="flip-card-front"><img className="img-fluid image-gallery"
-                                                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"/>
-                  <div className="my-2 tags text-start">
-                    <span className="badge rounded-pill tag-project-type me-2" style={{background: '#BB0087'}}>WEB INTEGRATION</span>
-                    <span className="badge rounded-pill bg-primary me-2">2024</span>
-                   </div>
-                </div>
-                <div className="flip-card-back"><a className="text-decoration-none"
-                                                   href="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
-                  <div className="flip-card-back-body image-gallery"
-                        style={{ background: 'url("/background-card.png") center/cover no-repeat' }}>
-                    <h2 style={{ textShadow: '-2px 1px 4px rgba(0, 0, 0, 0.44)', color: 'rgb(58, 58, 58)', letterSpacing: '4px' }}>Lorem
-                      Ipsum</h2>
-                  </div>
-                </a></div>
-              </div>
-            </div>
-
-
-              <div className="col item flip-card mb-4">
-              <div className="flip-card-inner">
-                <div className="flip-card-front"><img className="img-fluid image-gallery"
-                                                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"/>
-                  <div className="my-2 tags text-start">
-                    <span className="badge rounded-pill tag-project-type me-2" style={{background: '#0ACF83'}}>AUTOMATION</span>
-                    <span className="badge rounded-pill bg-primary me-2">2024</span>
-                   </div>
-                </div>
-                <div className="flip-card-back"><a className="text-decoration-none"
-                                                   href="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
-                  <div className="flip-card-back-body image-gallery"
-                        style={{ background: 'url("/background-card.png") center/cover no-repeat' }}>
-                    <h2 style={{ textShadow: '-2px 1px 4px rgba(0, 0, 0, 0.44)', color: 'rgb(58, 58, 58)', letterSpacing: '4px' }}>Lorem
-                      Ipsum</h2>
-                  </div>
-                </a></div>
-              </div>
-            </div>
-
-
-
-
 
           </div>
 
