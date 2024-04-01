@@ -118,6 +118,30 @@
   align-items: center;
 }
 
+
+/* Testimonials */
+.testimonials {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+
+.card{
+    box-shadow: -3px 5px 22.3px 0px rgba(0,0,0,0.2);
+    border-color: transparent;
+    border-radius: 20px;
+}
+
+
+.dark-card{
+  background: #333;
+  color: white;
+}
+
+.dark-card .card-source-text{
+  color: lightgray;
+}
+
+/* Other */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
