@@ -6,9 +6,17 @@ function App() {
   return (
 
     <div className="App">
+        <section className="section-header top-section">
+            <div className="content-container-header content-theme-dark">
+                <div className="content-inner-header">
+                    <h1>Nathaly T.</h1>
+                    <h3>Professional Software Engineer</h3>
+                </div>
+            </div>
+        </section>
 
 
-      <section className="about">
+        <section className="about">
         <div className="container-fluid p-0" style={{ maxWidth: '1200px'}}>
           <div className="row g-0 justify-content-center mt-5">
             <div className="col-lg-6 col-xl-4 text-white mx-auto order-lg-2 showcase-img"
