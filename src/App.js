@@ -3,6 +3,7 @@ import './App.css';
 import Header from './pages/homepage/components/Header';
 import AboutSection from './pages/homepage/components/About';
 import ServicesSection from './pages/homepage/components/Services';
+import WorkGallery from './pages/homepage/components/WorkGallery';
 
 //import * as url from "url";
 
@@ -18,99 +19,7 @@ function App() {
       <ServicesSection/>
 
 
-      <section id="work-gallery" className="photo-gallery py-5 py-xl-5">
-        <div className="container"style={{ background: 'url("/background-container-work-gallery.png") bottom/contain' }}>
-          <div className="row my-4">
-            <div className="col-md-8 col-xl-6 text-center mx-auto">
-              <h2 className="text-uppercase">My work</h2>
-              <p className="w-lg-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore</p>
-            </div>
-          </div>
-
-          <div className="row gx-5 gy-5 row-cols-1 row-cols-md-2 row-cols-xl-3 photos" data-bss-baguettebox="">
-
-            <div className="col item flip-card mb-4">
-              <div className="flip-card-inner">
-                <div className="flip-card-front"><img className="img-fluid image-gallery"
-                                                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"/>
-                  <div className="my-2 tags text-start">
-                    <span className="badge rounded-pill bg-success tag-project-type me-2">API</span>
-                    <span className="badge rounded-pill bg-primary me-2">2024</span>
-                   </div>
-                </div>
-                <div className="flip-card-back"><a className="text-decoration-none" data-bs-target="#modal-1"
-                                                   data-bs-toggle="modal">
-                  <div className="flip-card-back-body image-gallery"
-                        style={{ background: 'url("/background-card.png") center/cover no-repeat' }}>
-                    <h2 style={{ textShadow: '-2px 1px 4px rgba(0, 0, 0, 0.44)', color: 'rgb(58, 58, 58)', letterSpacing: '4px' }}>Lorem
-                      Ipsum</h2>
-                  </div>
-                </a></div>
-              </div>
-            </div>
-
-            <div className="col item flip-card mb-4">
-              <div className="flip-card-inner">
-                <div className="flip-card-front"><img className="img-fluid image-gallery"
-                                                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"/>
-                  <div className="my-2 tags text-start">
-                    <span className="badge rounded-pill tag-project-type me-2" style={{background: '#BB0087'}}>WEB INTEGRATION</span>
-                    <span className="badge rounded-pill bg-primary me-2">2024</span>
-                   </div>
-                </div>
-                <div className="flip-card-back"><a className="text-decoration-none" data-bs-target="#modal-1"
-                                                   data-bs-toggle="modal">
-                  <div className="flip-card-back-body image-gallery"
-                        style={{ background: 'url("/background-card.png") center/cover no-repeat' }}>
-                    <h2 style={{ textShadow: '-2px 1px 4px rgba(0, 0, 0, 0.44)', color: 'rgb(58, 58, 58)', letterSpacing: '4px' }}>Lorem
-                      Ipsum</h2>
-                  </div>
-                </a></div>
-              </div>
-            </div>
-
-
-              <div className="col item flip-card mb-4">
-              <div className="flip-card-inner">
-                <div className="flip-card-front"><img className="img-fluid image-gallery"
-                                                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"/>
-                  <div className="my-2 tags text-start">
-                    <span className="badge rounded-pill tag-project-type me-2" style={{background: '#0ACF83'}}>AUTOMATION</span>
-                    <span className="badge rounded-pill bg-primary me-2">2024</span>
-                   </div>
-                </div>
-                <div className="flip-card-back"><a className="text-decoration-none" data-bs-target="#modal-1"
-                                                   data-bs-toggle="modal">
-                  <div className="flip-card-back-body image-gallery"
-                        style={{ background: 'url("/background-card.png") center/cover no-repeat' }}>
-                    <h2 style={{ textShadow: '-2px 1px 4px rgba(0, 0, 0, 0.44)', color: 'rgb(58, 58, 58)', letterSpacing: '4px' }}>Lorem
-                      Ipsum</h2>
-                  </div>
-                </a></div>
-              </div>
-            </div>
-
-          </div>
-
-
-          <div className="row my-5">
-            <div className="col">
-              <nav>
-                <ul className="pagination pagination-lg justify-content-center">
-                  <li className="page-item"><a className="page-link" aria-label="Previous" href="#"><span
-                      aria-hidden="true">«</span></a></li>
-                  <li className="page-item"><a className="page-link" href="#">1</a></li>
-                  <li className="page-item"><a className="page-link" href="#">2</a></li>
-                  <li className="page-item"><a className="page-link" href="#">3</a></li>
-                  <li className="page-item"><a className="page-link" aria-label="Next" href="#"><span
-                      aria-hidden="true">»</span></a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </section>
+      <WorkGallery/>
 
       <section class="text-center bg-light testimonials" id='testimonials'>
         <div class="container p-5" style={{ background: 'var(--bs-body-bg)'}}>
