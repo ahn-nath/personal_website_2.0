@@ -21,7 +21,8 @@ const AboutSection = () => {
     <section className="about">
       <div className="container-fluid p-0" style={{ maxWidth: '1200px' }}>
         <div className="row g-0 justify-content-center mt-5">
-          <div 
+
+          <div
             className="col-lg-6 col-xl-4 text-white mx-auto order-lg-2 showcase-img"
             style={{
               backgroundImage: "url(https://images.pexels.com/photos/34153/pexels-photo.jpg)",
@@ -30,7 +31,7 @@ const AboutSection = () => {
               backgroundRepeat: 'no-repeat'
             }}
           />
-          
+
           <div className="col-lg-6 order-lg-1 p-5">
             <h2 className="text-uppercase text-center mb-4">About</h2>
             <p className="lead mb-0">
