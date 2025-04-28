@@ -32,7 +32,7 @@ const AboutSection = () => {
             }}
           />
 
-          <div className="col-lg-6 order-lg-1 p-5">
+          <div className="col-lg-7 order-lg-1 p-5">
             <h2 className="text-uppercase text-center mb-4">About</h2>
             <p className="lead mb-0">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
