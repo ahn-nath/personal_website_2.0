@@ -19,8 +19,8 @@ const AboutSection = () => {
 
   return (
     <section className="about">
-      <div className="container-fluid p-0" style={{ maxWidth: '1200px' }}>
-        <div className="row g-0 justify-content-center mt-5">
+      <div className="container py-xl-5 px-xl-5" style={{ maxWidth: '1200px' }}>
+        <div className="row g-0 justify-content-center mt-md-5">
 
           <div
             className="col-lg-6 col-xl-4 text-white mx-auto order-lg-2 showcase-img"
