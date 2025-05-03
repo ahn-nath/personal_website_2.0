@@ -23,16 +23,17 @@ const AboutSection = () => {
         <div className="row g-0 justify-content-center mt-md-5">
 
           <div
-            className="col-lg-6 col-xl-4 text-white mx-auto order-lg-2 showcase-img"
+            className="col-xl-4 text-white mx-auto order-xl-2 showcase-img"
             style={{
               backgroundImage: "url(https://images.pexels.com/photos/34153/pexels-photo.jpg)",
               backgroundPosition: 'center',
               backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat'
+              backgroundRepeat: 'no-repeat',
+              minHeight: '300px',
             }}
           />
 
-          <div className="col-lg-7 order-lg-1 p-5">
+          <div className="col-xl-7 order-xl-1 p-5">
             <h2 className="text-uppercase text-center mb-4">About</h2>
             <p className="lead mb-0">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
