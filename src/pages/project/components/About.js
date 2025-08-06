@@ -2,25 +2,15 @@ import React from 'react';
 import SocialLink from '../../../components/SocialLink';
 
 const AboutSection = () => {
-  
+
   return (
     <section className="about">
       <div className="container py-xl-5 px-xl-5" style={{ maxWidth: '1200px' }}>
         <div className="row g-0 justify-content-center mt-md-5">
 
-          <div
-            className="col-xl-4 text-white mx-auto order-xl-2 showcase-img"
-            style={{
-              backgroundImage: "url(https://images.pexels.com/photos/34153/pexels-photo.jpg)",
-              backgroundPosition: 'center',
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-              minHeight: '300px',
-            }}
-          />
 
-          <div className="col-xl-7 order-xl-1 p-5">
-            <h2 className="text-uppercase text-center mb-4">About</h2>
+          <div className="col-xl-11 order-xl-1 p-5">
+            <h2 className="text-uppercase text-center mb-4">DESCRIPTION</h2>
             <p className="lead mb-0">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
               doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
@@ -37,6 +27,37 @@ const AboutSection = () => {
             </p>
 
           </div>
+
+          <div className="col-xl-11 order-xl-2 p-5">
+            <table class="table table-bordered table-hover">
+              <thead class="table-light">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col" colspan="2">First</th>
+                  <th scope="col">Last</th>
+                </tr>
+              </thead>
+              
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td colspan="2">Mark</td>
+                  <td>Otto</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td colspan="2">Jacob</td>
+                  <td>Thornton</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td colspan="2">Larry</td>
+                  <td>the Bird</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
         </div>
       </div>
     </section>
