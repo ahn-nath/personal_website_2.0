@@ -3,14 +3,14 @@ import React from 'react';
 import ProjectCard from './ProjectCard';
 import Pagination from './Pagination';
 
-const WorkGallery = ({projects}) => {
+const WorkGallery = ({title, projects = []}) => {
 
   return (
     <section id="work-gallery" className="photo-gallery py-5 py-xl-5">
       <div className="container px-5" style={{ background: 'url("/background-container-work-gallery.png") bottom/contain' }}>
         <div className="row my-4">
           <div className="col-md-8 col-xl-6 text-center mx-auto">
-            <h2 className="text-uppercase">My work</h2>
+            <h2 className="text-uppercase">{title}</h2>
             <p className="w-lg-50">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
             </p>
