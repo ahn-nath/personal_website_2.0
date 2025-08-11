@@ -3,33 +3,7 @@ import React from 'react';
 import ProjectCard from './ProjectCard';
 import Pagination from './Pagination';
 
-const WorkGallery = () => {
-  const projects = [
-    {
-      image: "https://cdn.bootstrapstudio.io/placeholders/1400x800.png",
-      tags: [
-        { label: "API", color: "#0ACF83" },
-        { label: "2024", color: "#0d6efd" }
-      ],
-      title: "Lorem Ipsum"
-    },
-    {
-      image: "https://cdn.bootstrapstudio.io/placeholders/1400x800.png",
-      tags: [
-        { label: "WEB INTEGRATION", color: "#BB0087" },
-        { label: "2024", color: "#0d6efd" }
-      ],
-      title: "Lorem Ipsum"
-    },
-    {
-      image: "https://cdn.bootstrapstudio.io/placeholders/1400x800.png",
-      tags: [
-        { label: "AUTOMATION", color: "#0ACF83" },
-        { label: "2024", color: "#0d6efd" }
-      ],
-      title: "Lorem Ipsum"
-    }
-  ];
+const WorkGallery = ({projects}) => {
 
   return (
     <section id="work-gallery" className="photo-gallery py-5 py-xl-5">
