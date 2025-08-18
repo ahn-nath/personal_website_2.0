@@ -8,21 +8,6 @@ const HeroHeader = () => {
 
   return (
     <header className="hero-header d-flex flex-column">
-      {/* Navigation */}
-      <nav className="d-flex justify-content-end py-4 px-4 px-md-5">
-        <ul className="nav gap-4">
-          <li className="nav-item">
-            <a href="#projects" className="nav-link text-light opacity-75">
-              Projects
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="#contact" className="nav-link text-light opacity-75">
-              Contact
-            </a>
-          </li>
-        </ul>
-      </nav>
 
       {/* Main Content */}
       <div className="container flex-grow-1 d-flex flex-column justify-content-center text-center text-md-start">

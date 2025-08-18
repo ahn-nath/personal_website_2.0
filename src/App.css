@@ -13,6 +13,13 @@ a, .page-link {
   letter-spacing: 1px;
 }
 
+.nav-link{
+    color: #04818c;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
 body, h1,h2,h3,h4,h5,h6,p,a,ul,li,span,div {
   font-family: 'Raleway', sans-serif;
 }
