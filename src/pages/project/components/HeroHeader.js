@@ -1,5 +1,3 @@
-// HeroHeader.jsx
-import React from 'react';
 import './HeroHeader.css';
 
 const HeroHeader = () => {
@@ -7,7 +5,7 @@ const HeroHeader = () => {
   const techStack2 = ['Docker', 'Kubernetes', 'Prometheus', 'Grafana'];
 
   return (
-    <header className="hero-header d-flex flex-column">
+    <header className="hero-header d-flex flex-column py-5">
 
       {/* Main Content */}
       <div className="container flex-grow-1 d-flex flex-column justify-content-center text-center text-md-start">

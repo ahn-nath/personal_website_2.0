@@ -11,7 +11,7 @@ const DemoSection = () => {
    ]
  
    return (
-     <header className="demo-header d-flex flex-column">
+     <header className="demo-header d-flex flex-column py-5">
  
        {/* Main Content */}
        <div className="container flex-grow-1 d-flex flex-column justify-content-center text-center text-md-start">
