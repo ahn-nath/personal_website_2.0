@@ -1,12 +1,14 @@
-const TestimonialCard = ({ text, author, source, isDark }) => {
+const TestimonialCard = ({ text, author, source, link, isDark }) => {
     return (
         <div className={`card ${isDark ? 'dark-card' : 'card-light'} border-0 my-3`}>
             <div className="card-body p-4">
                 <p className="text-start card-text">{text}</p>
                 <h5 className="text-end card-title">{author}</h5>
+                <a href={`${link}`} className="text-decoration-none">
                 <p className={`mb-2 small card-source-text text-end`}>
                     From {source}
                 </p>
+                </a>
             </div>
         </div>
     );
@@ -19,12 +21,14 @@ const TestimonialsSection = () => {
                 text: "Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.",
                 author: "Lorem Ipsum",
                 source: "LinkedIn",
+                link: "https://www.linkedin.com/in/nathaly-toledo/",
                 isDark: false
             },
             {
                 text: "Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.",
                 author: "Lorem Ipsum",
                 source: "LinkedIn",
+                link: "https://www.linkedin.com/in/nathaly-toledo/",
                 isDark: true
             }
         ],
@@ -33,12 +37,14 @@ const TestimonialsSection = () => {
                 text: "Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.",
                 author: "Lorem Ipsum",
                 source: "LinkedIn",
+                link: "https://www.linkedin.com/in/nathaly-toledo/",
                 isDark: true
             },
             {
                 text: "Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.",
                 author: "Lorem Ipsum",
                 source: "LinkedIn",
+                link: "https://www.linkedin.com/in/nathaly-toledo/",
                 isDark: false
             }
         ]
