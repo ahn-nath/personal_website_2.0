@@ -28,12 +28,15 @@ const WorkGallery = ({title, projects = []}) => {
           ))}
         </div>
 
+      {/* Pagination Section NOTE: to be implemented in future releases
         <div className="row my-5">
           <div className="col">
             <Pagination />
           </div>
         </div>
+        */}
       </div>
+
     </section>
   );
 };
