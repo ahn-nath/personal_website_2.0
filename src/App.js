@@ -27,7 +27,8 @@ export default function App() {
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/projects" element={<ProjectPage />} />
+            <Route path="/projects/:id" element={<ProjectPage />} />
+
 
             {/* Optional: 404 route */}
             {/* <Route path="*" element={<NotFound />} /> */}

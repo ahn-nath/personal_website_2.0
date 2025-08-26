@@ -30,6 +30,7 @@ const HomePage = () => {
 
   const projects = [
     {
+      id: "lorem-ipsum",
       image: "https://cdn.bootstrapstudio.io/placeholders/1400x800.png",
       tags: [
         { label: "API", color: "#0ACF83" },
@@ -38,6 +39,7 @@ const HomePage = () => {
       title: "Lorem Ipsum"
     },
     {
+      id: "web-integration",
       image: "https://cdn.bootstrapstudio.io/placeholders/1400x800.png",
       tags: [
         { label: "WEB INTEGRATION", color: "#BB0087" },
@@ -46,6 +48,7 @@ const HomePage = () => {
       title: "Lorem Ipsum"
     },
     {
+      id: "automation",
       image: "https://cdn.bootstrapstudio.io/placeholders/1400x800.png",
       tags: [
         { label: "AUTOMATION", color: "#0ACF83" },

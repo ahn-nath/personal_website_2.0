@@ -1,7 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const ProjectCard = ({ image, tags, title }) => (
+const ProjectCard = ({ id, image, tags, title }) => (
+
+
   <div className="col item flip-card mb-4">
+  <Link to={`/projects/${id}`} className="text-decoration-none">
     <div className="flip-card-inner">
       <div className="flip-card-front">
         <img className="img-fluid image-gallery" src={image} alt={title} />
@@ -18,7 +22,7 @@ const ProjectCard = ({ image, tags, title }) => (
         </div>
       </div>
       <div className="flip-card-back">
-        <a className="text-decoration-none" data-bs-target="#modal-1" data-bs-toggle="modal">
+        <a className="text-decoration-none">
           <div 
             className="flip-card-back-body image-gallery"
             style={{ background: 'url("/background-card.png") center/cover no-repeat' }}
@@ -34,6 +38,7 @@ const ProjectCard = ({ image, tags, title }) => (
         </a>
       </div>
     </div>
+    </Link>
   </div>
 );
 

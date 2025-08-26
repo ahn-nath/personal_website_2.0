@@ -7,8 +7,8 @@ const WorkGallery = ({title, projects = []}) => {
 
   return (
     <section id="work-gallery" className="photo-gallery py-5 py-xl-5">
-      <div className="container px-5" style={{ background: 'url("/background-container-work-gallery.png") bottom/contain' }}>
-        <div className="row my-4">
+      <div className="container py-5" style={{ background: 'url("/background-container-work-gallery.png") bottom/contain' }}>
+        <div className="row">
           <div className="col-md-8 col-xl-6 text-center mx-auto">
             <h2 className="text-uppercase">{title}</h2>
             <p className="w-lg-50">
@@ -17,14 +17,17 @@ const WorkGallery = ({title, projects = []}) => {
           </div>
         </div>
 
-        <div className="row gx-5 gy-5 row-cols-1 row-cols-md-2 row-cols-xl-3 photos">
+        <div className="row gx-5 gy-5 row-cols-1 row-cols-md-2 row-cols-xl-3 photos my-2">
           {projects.map((project, index) => (
+            
             <ProjectCard
               key={index}
+              id = {project.id}
               image={project.image}
               tags={project.tags}
               title={project.title}
             />
+            
           ))}
         </div>
 
