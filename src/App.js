@@ -14,12 +14,6 @@ export default function App() {
         <header className="py-3 px-4 d-flex justify-content-end">
           <nav className="d-flex gap-3 align-items-center">
             <Link to="/" className="nav-link text-dark">Home</Link>
-            {/* If you want a separate projects page */}
-            <Link to="/projects" className="nav-link text-dark">Projects (page)</Link>
-
-            {/* If instead you want to scroll to a section on the homepage:
-                <Link to="/#projects" className="nav-link text-dark">Projects (section)</Link>
-                see the ScrollToHash helper below */}
           </nav>
         </header>
 

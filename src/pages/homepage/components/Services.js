@@ -44,6 +44,7 @@ const ServicesSection = ({title, services = [], showIcon = true}) => {
                 title={service.title}
                 description={service.description}
                 link={service.link}
+                type={service.type}
               />
             ))}
           </div>

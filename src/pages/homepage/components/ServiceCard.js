@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ServiceCard = ({ iconPath, title, description, link, showIcon = true }) => (
+const ServiceCard = ({ iconPath, title, description, link, type, showIcon = true }) => (
   <div className="col">
     <div className="text-center d-flex flex-column align-items-center align-items-xl-center border border-white p-3 py-4">
 
@@ -22,7 +22,7 @@ const ServiceCard = ({ iconPath, title, description, link, showIcon = true }) =>
       <div className="mx-1">
         <h4 className="mt-2">{title}</h4>
         <p>{description}</p>
-        <a href={link}>Learn more&nbsp;</a>
+        <a href={link} className='accent-color'>{type}</a>
       </div>
     </div>
   </div>

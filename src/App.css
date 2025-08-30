@@ -6,6 +6,11 @@
   border: none;
 }
 
+
+.accent-color {
+    color: #04818c;
+}
+
 a, .page-link {
     color: #04818c;
     text-decoration: none;
