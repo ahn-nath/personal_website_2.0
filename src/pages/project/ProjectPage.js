@@ -17,7 +17,7 @@ const ProjectPage = () => {
       <AboutSection />
       <ServicesSection title={"Features"} services={project ? project.features : []} />
       <ArchitectureDesignSection />
-      <WorkGallery title={"Gallery"} projects={project ? project.gallery_items : []} />
+      <WorkGallery title={"Gallery"} projects={project ? project.gallery_items : []} openModalOnClick={true} />
       <DemoSection />
     </div>
   );

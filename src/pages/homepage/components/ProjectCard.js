@@ -1,11 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ProjectCard = ({ id, image, tags, title }) => (
+const ProjectCard = ({ id, image, tags, title, onOpenModal, openModalOnClick = false }) => {
+  // Click handler when modal is desired
+  const handleOpen = (e) => {
+    e.preventDefault();
+    if (onOpenModal) {
+      onOpenModal();
+    }
+  };
 
-
+  const cardInner = (
   <div className="col item flip-card mb-4">
-  <Link to={`/projects/${id}`} className="text-decoration-none">
     <div className="flip-card-inner">
       <div className="flip-card-front">
         <img className="img-fluid image-gallery" src={image} alt={title} />
@@ -38,8 +44,24 @@ const ProjectCard = ({ id, image, tags, title }) => (
         </a>
       </div>
     </div>
-    </Link>
   </div>
-);
+  );
+
+  // This code is a switch that determines if the card should open a modal or be a link
+    return (
+    <div className="col item flip-card mb-4">
+      {openModalOnClick ? (
+        // Use a button-like element so accessibility is okay
+        <a href="#" className="text-decoration-none" onClick={handleOpen}>
+          {cardInner}
+        </a>
+      ) : (
+        <Link to={`/projects/${id}`} className="text-decoration-none">
+          {cardInner}
+        </Link>
+      )}
+    </div>
+  );
+}
 
 export default ProjectCard;

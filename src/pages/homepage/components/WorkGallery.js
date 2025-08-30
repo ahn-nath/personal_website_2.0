@@ -2,8 +2,18 @@
 import React from 'react';
 import ProjectCard from './ProjectCard';
 import Pagination from './Pagination';
+import ImageModal from './ImageModal';
+import { useState } from 'react';
 
-const WorkGallery = ({title, projects = []}) => {
+const WorkGallery = ({title, projects = [], openModalOnClick = false}) => {
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const handleOpenModal = (projectId) => {
+    const p = projects.find((x) => x.id === projectId);
+    if (p) setSelectedProject(p);
+  };
+
+  const handleCloseModal = () => setSelectedProject(null);
 
   return (
     <section id="work-gallery" className="photo-gallery py-5 py-xl-5">
@@ -21,24 +31,27 @@ const WorkGallery = ({title, projects = []}) => {
           {projects.map((project, index) => (
             
             <ProjectCard
-              key={index}
+              key={project.id || index}
               id = {project.id}
               image={project.image}
               tags={project.tags}
               title={project.title}
+              openModalOnClick={openModalOnClick}
+              onOpenModal={handleOpenModal}
             />
             
           ))}
         </div>
 
-      {/* Pagination Section NOTE: to be implemented in future releases
-        <div className="row my-5">
-          <div className="col">
-            <Pagination />
-          </div>
-        </div>
-        */}
       </div>
+
+      {/* Image Modal: only rendered when a project is selected */}
+      <ImageModal
+        show={!!selectedProject}
+        onClose={handleCloseModal}
+        image={selectedProject?.image}
+        title={selectedProject?.title}
+      />
 
     </section>
   );

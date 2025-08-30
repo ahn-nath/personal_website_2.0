@@ -63,7 +63,7 @@ const HomePage = () => {
       <Header />
       <AboutSection />
       <ServicesSection title={"How can I help you?"} services={services} showIcon={true} />
-      <WorkGallery title={"My work"} projects={projects} />
+      <WorkGallery title={"My work"} projects={projects} openModalOnClick={false} />
       <TestimonialsSection />
     </div>
   );
