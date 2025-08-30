@@ -7,9 +7,15 @@ const projects = [
             { label: "2024", color: "#0d6efd" }
         ],
         title: "AI-Powered Predictive Maintenance System for Industrial Robotics",
-        subtitle: "Subtitle for Lorem Ipsum",
+        subtitle: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
         technologies: ["React", "Node.js", "GraphQL", "Docker"],
         description: "Full description about Lorem Ipsum project...",
+        general_details: [
+            { label: "Client", value: "Acme Corp" },
+            { label: "Date", value: "January 2024" },
+            { label: "Category", value: "Web Development" },
+            { label: "Website", value: "https://example.com" }
+        ],
         features: [
             {
                 iconPath: "M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6",
@@ -55,6 +61,12 @@ const projects = [
                 ],
                 title: "Lorem Ipsum"
             }
+        ],
+          project_links: [
+            { name: 'GitHub', url: '#', icon: 'bi bi-github' },
+            { name: 'Demo video', url: '#', icon: 'bi bi-camera-reels-fill' },
+            { name: 'Live demo', url: '#', icon: 'bi bi-laptop-fill' },
+            { name: 'Marketplace', url: '#', icon: 'bi bi-bag-dash-fill' },
         ]
     },
     {
@@ -64,10 +76,16 @@ const projects = [
             { label: "WEB INTEGRATION", color: "#BB0087" },
             { label: "2024", color: "#0d6efd" }
         ],
-        title: "Web Integration",
-        subtitle: "Subtitle for Lorem Ipsum",
+        title: "Web Integration for E-commerce Platform in Retail Sector",
+        subtitle: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
         technologies: ["React", "Node.js", "GraphQL", "Docker"],
-        description: "Details for web integration project...",
+        description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+          general_details: [
+            { label: "Client", value: "Acme Corp" },
+            { label: "Date", value: "January 2024" },
+            { label: "Category", value: "Web Development" },
+            { label: "Website", value: "https://example.com" }
+        ],
         features: [
             {
                 iconPath: "M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6",
@@ -113,12 +131,6 @@ const projects = [
                 ],
                 title: "Lorem Ipsum"
             }
-        ],
-        general_details: [
-            { label: "Client", value: "Acme Corp" },
-            { label: "Date", value: "January 2024" },
-            { label: "Category", value: "Web Development" },
-            { label: "Website", value: "https://example.com" }
         ],
         project_links: [
             { name: 'GitHub', url: '#', icon: 'bi bi-github' },
