@@ -1,3 +1,6 @@
+import testimonialsSlides from "../../../data/testimonials";
+
+
 const TestimonialCard = ({ text, author, source, link, isDark }) => {
     return (
         <div className={`card ${isDark ? 'dark-card' : 'card-light'} border-0 my-3`}>
@@ -15,40 +18,6 @@ const TestimonialCard = ({ text, author, source, link, isDark }) => {
 };
 
 const TestimonialsSection = () => {
-    const testimonialsSlides = [
-        [
-            {
-                text: "Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.",
-                author: "Lorem Ipsum",
-                source: "LinkedIn",
-                link: "https://www.linkedin.com/in/nathaly-toledo/",
-                isDark: false
-            },
-            {
-                text: "Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.",
-                author: "Lorem Ipsum",
-                source: "LinkedIn",
-                link: "https://www.linkedin.com/in/nathaly-toledo/",
-                isDark: true
-            }
-        ],
-        [
-            {
-                text: "Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.",
-                author: "Lorem Ipsum",
-                source: "LinkedIn",
-                link: "https://www.linkedin.com/in/nathaly-toledo/",
-                isDark: true
-            },
-            {
-                text: "Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.",
-                author: "Lorem Ipsum",
-                source: "LinkedIn",
-                link: "https://www.linkedin.com/in/nathaly-toledo/",
-                isDark: false
-            }
-        ]
-    ];
 
     return (
         <section className="text-center bg-light testimonials" id="testimonials">
