@@ -65,12 +65,9 @@ const TestimonialsSection = () => {
                                     
                                     <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
                                         <div className="row gy-4 mb-5 pb-3 mx-3">
-                                            {/* Map through each testimonial in the slide/array */}
-                                            {slide.map((testimonial, tIndex) => (
-                                                <div key={tIndex} className={tIndex === 0 ? 'col-sm-12 col-lg-6' : 'col'}>
-                                                    <TestimonialCard {...testimonial} />
+                                                <div key={index} className='col'>
+                                                    <TestimonialCard {...slide} />
                                                 </div>
-                                            ))}
                                         </div>
                                     </div>
                                 ))}

@@ -1,7 +1,7 @@
 const testimonials =
 
   [
-    [
+    
       {
         "text": `Nathaly has been a very valuable asset for my agency. She is organized, responsible, hard working, one of the most professional people I have had the pleasure to work with.\n
       I was looking for someone to help me manage my projects, not knowing what to expect, and was greatly surprised with the level of commitment and knowledge she brought to the team. She also has great people skills, always conducting herself in the most respectful and professional manner.\n
@@ -18,9 +18,9 @@ const testimonials =
         "source": "LinkedIn",
         "link": "https://www.linkedin.com/in/nathaly-toledo/",
         "isDark": true
-      }
-    ],
-    [
+      },
+    
+    
       {
         "text": `I had the pleasure of connecting with Nathaly as we were both student leaders and interns with Upkey and the IE Business School.\n
               She was encouraging and committed every step of the way. Nathaly is a true example of a leader. She has exceptional communication and presentation skills. She was dedicated and takes initiative in following through with everything she sets her mind to.\n
@@ -28,21 +28,21 @@ const testimonials =
         "author": "Natalie Turner",
         "source": "LinkedIn",
         "link": "https://www.linkedin.com/in/nathaly-toledo/",
-        "isDark": true
+        "isDark": false
       },
       {
         "text": `Nathaly is an amazingly dedicated person who is hard working both as an individual and a teammate, while having great organizational skills and being goal-oriented as a leader. I had a chance to have Nathaly as my colleague in the GVC Hackathon where she proved that she is capable of working under time pressure, while managing to support her teammates. Last but not least, she acted as a team technical lead, responsible for communicating the work status to the project owners and keeping track of the remaining tasks.`,
         "author": "Zuzana Jankovska",
         "source": "LinkedIn",
         "link": "https://www.linkedin.com/in/nathaly-toledo/",
-        "isDark": false
+        "isDark": true
       },
       {
         "text": `Nathaly is a remarkable young lady that is driven by ambition and a sense of constantly learning. I was so impressed by her passion in Upkey and then in GVC, never letting any opportunity intimidate her and always seeking surpass herself. I strongly recommend her for any team.`,
         "author": "Paris de l'Etraz, PhD",
         "source": "LinkedIn",
         "link": "https://www.linkedin.com/in/nathaly-toledo/",
-        "isDark": true
+        "isDark": false
       },
       {
         "text": `While working with Nathaly, I found her to be a highly dedicated developer, leader, and team member. Her knowledge of back-end frameworks is exemplary, and she was swift to pick up new concepts and perform as required on the work.
@@ -51,7 +51,7 @@ const testimonials =
         "author": "Rohan Pal",
         "source": "LinkedIn",
         "link": "https://www.linkedin.com/in/nathaly-toledo/",
-        "isDark": false
+        "isDark": true
       },
       {
         "text": `I was working with Nathaly for Mission: Cure in the engineering team. As a backend developer, she has intensive knowledge about various backend frameworks which drove our team towards making a good choice on the tech stack. Her knowledge and practical experience with setting up databases also helped the entire team a lot.
@@ -60,7 +60,7 @@ const testimonials =
         "author": "Anni Pan",
         "source": "LinkedIn",
         "link": "https://www.linkedin.com/in/nathaly-toledo/",
-        "isDark": true
+        "isDark": false
       },
 
       {
@@ -74,14 +74,14 @@ const testimonials =
         "author": "Stephen Plainte",
         "source": "LinkedIn",
         "link": "https://www.linkedin.com/in/nathaly-toledo/",
-        "isDark": false
+        "isDark": true
       },
       {
         "text": `Nath is incredibly skilled in her craft and shows no hesitation in taking the biggest challenges at hand. I applaud her desire to serve the underprivileged community, which I resonate with. She is a good learner and communicator, and a powerful software engineer. She most certainly has my recommendation for her quality and production-level skills.`,
         "author": "Stephen Plainte",
         "source": "LinkedIn",
         "link": "https://www.linkedin.com/in/nathaly-toledo/",
-        "isDark": true
+        "isDark": false
       },
       {
         "text": `Nathaly and I were under the same cohort of MLH Fellowship - Fall'22 under GitHub organization. Right from the first day Nathaly showed tremendous technical and managerial skills. She has the ability to take up any problem statement, define key points, plan out next steps and distribute work within the team. She is a perfect team player and always demonstrated high quality work ethics. 
@@ -90,7 +90,7 @@ Throughout the fellowship, she never hesitated in taking ownership or leading a 
         "author": "Tushar Gupta",
         "source": "LinkedIn",
         "link": "https://www.linkedin.com/in/nathaly-toledo/",
-        "isDark": false
+        "isDark": true
       },
 
       {
@@ -98,7 +98,7 @@ Throughout the fellowship, she never hesitated in taking ownership or leading a 
         "author": "Mike Zawitkowski",
         "source": "LinkedIn",
         "link": "https://www.linkedin.com/in/nathaly-toledo/",
-        "isDark": true
+        "isDark": false
       },
       {
         "text": `I had the pleasure of working with Nathaly at Acorn Analytics, where she proved to be an exceptional full-stack developer. She is highly organized, detail-oriented, and faithful to design intentions, ensuring a great transition from concept to implementation.
@@ -109,7 +109,7 @@ Throughout the fellowship, she never hesitated in taking ownership or leading a 
         "author": "Doris Torchia",
         "source": "LinkedIn",
         "link": "https://www.linkedin.com/in/nathaly-toledo/",
-        "isDark": false
+        "isDark": true
       },
       {
         "text": `Working with Nathaly was a pleasure. She is a very responsible and organized person who brought some of those qualities and more to my team.
@@ -118,7 +118,7 @@ Throughout the fellowship, she never hesitated in taking ownership or leading a 
         "author": "Andres Olvera",
         "source": "Upwork",
         "link": "https://www.upwork.com/freelancers/~0138ecfcda52ffec5e",
-        "isDark": true,
+        "isDark": false,
         "date": "11-2020"
       },
       {
@@ -128,7 +128,7 @@ Throughout the fellowship, she never hesitated in taking ownership or leading a 
         "author": "Robert Norinder",
         "source": "Upwork",
         "link": "https://www.upwork.com/freelancers/~0138ecfcda52ffec5e",
-        "isDark": false,
+        "isDark": true,
         "date": "03-2021"
       },
       {
@@ -138,7 +138,7 @@ Throughout the fellowship, she never hesitated in taking ownership or leading a 
         "author": "Andres Olvera",
         "source": "Upwork",
         "link": "https://www.upwork.com/freelancers/~0138ecfcda52ffec5e",
-        "isDark": true,
+        "isDark": false,
         "date": "04-2021"
       },
       {
@@ -146,7 +146,7 @@ Throughout the fellowship, she never hesitated in taking ownership or leading a 
         "author": "Sandra Naranjo Bautista",
         "source": "Upwork",
         "link": "https://www.upwork.com/freelancers/~0138ecfcda52ffec5e",
-        "isDark": false,
+        "isDark": true,
         "date": "06-2021"
       },
       {
@@ -154,7 +154,7 @@ Throughout the fellowship, she never hesitated in taking ownership or leading a 
         "author": "Miguel Angel Schwindt",
         "source": "Upwork",
         "link": "https://www.upwork.com/freelancers/~0138ecfcda52ffec5e",
-        "isDark": true,
+        "isDark": false,
         "date": "08-2021"
       },
       {
@@ -162,7 +162,7 @@ Throughout the fellowship, she never hesitated in taking ownership or leading a 
         "author": "Pavel Karpisek",
         "source": "Upwork",
         "link": "https://www.upwork.com/freelancers/~0138ecfcda52ffec5e",
-        "isDark": false,
+        "isDark": true,
         "date": "12-2021"
       },
       {
@@ -172,7 +172,7 @@ Throughout the fellowship, she never hesitated in taking ownership or leading a 
         "author": "Quim Prats",
         "source": "Upwork",
         "link": "https://www.upwork.com/freelancers/~0138ecfcda52ffec5e",
-        "isDark": true,
+        "isDark": false,
         "date": "02-2022"
       },
       {
@@ -182,7 +182,7 @@ Throughout the fellowship, she never hesitated in taking ownership or leading a 
         "author": `Quim Prats`,
         "source": "Upwork",
         "link": "https://www.upwork.com/freelancers/~0138ecfcda52ffec5e",
-        "isDark": false,
+        "isDark": true,
         "date": "02-2022"
       },
       {
@@ -190,7 +190,7 @@ Throughout the fellowship, she never hesitated in taking ownership or leading a 
         "author": `Stephen Plainte`,
         "source": "Upwork",
         "link": "https://www.upwork.com/freelancers/~0138ecfcda52ffec5e",
-        "isDark": true,
+        "isDark": false,
         "date": "02-2024"
       },
 
@@ -250,9 +250,6 @@ In addition to her technical expertise, Nathaly’s ability to mentor junior dev
         "isDark": false,
         "date": "01-2025"
       }
-
-
-    ]
   ]
 
 
