@@ -22,7 +22,7 @@ const WorkGallery = ({title, projects = [], openModalOnClick = false}) => {
           <div className="col-md-8 col-xl-6 text-center mx-auto">
             <h2 className="text-uppercase">{title}</h2>
             <p className="w-lg-50">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+              Selected, relevant projects. Click a card to read a detailed case page describing the problem, approach and outcome.
             </p>
           </div>
         </div>

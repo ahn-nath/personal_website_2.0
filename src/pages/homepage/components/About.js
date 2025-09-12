@@ -36,17 +36,16 @@ const AboutSection = () => {
           <div className="col-xl-7 order-xl-1 p-5">
             <h2 className="text-uppercase text-center mb-4">About</h2>
             <p className="lead mb-0">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-              doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-              veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-              <br /><br />
-              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-              sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+              Nathaly Toledo is a top rated (top 10% on Upwork) full-stack developer with over 4 years of experience building solutions for global clients.
+              Proficient in backend and frontend technologies, she delivers scalable apps, APIs, and tools for automation and optimization.
+              <br/><br/>
+              She enjoys observing how things work in the real world, identifying recurring patterns, and conceptualizing software solutions to improve and
+              optimize those systems, for example, redesigning how people find products on the street with a software-driven approach.
               &nbsp;&nbsp;
+              <br/><br/>
               <span style={{ color: '#000' }}>
-                Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt
-                ut labore et dolore magnam aliquam quaerat voluptatem.
+              She is especially drawn to projects that merge technical expertise with social psychology and
+              to engineering solutions that address challenges in underserved communities.
               </span>
             </p>
 

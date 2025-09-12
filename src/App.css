@@ -6,7 +6,6 @@
   border: none;
 }
 
-
 .accent-color {
     color: #04818c;
 }
@@ -37,6 +36,10 @@ h1, h2, h3{
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.text-with-linebreaks {
+  white-space: pre-line;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -239,7 +242,6 @@ h1, h2, h3{
     border-color: transparent;
     border-radius: 20px;
 }
-
 
 .dark-card{
   background: #333;

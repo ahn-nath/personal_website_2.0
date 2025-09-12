@@ -5,7 +5,9 @@ const TestimonialCard = ({ text, author, source, link, isDark }) => {
     return (
         <div className={`card ${isDark ? 'dark-card' : 'card-light'} border-0 my-3`}>
             <div className="card-body p-4">
-                <p className="text-start card-text">{text}</p>
+                <p className="text-start card-text text-gray-700 text-with-linebreaks">
+                    {text}
+                </p>
                 <h5 className="text-end card-title">{author}</h5>
                 <a href={`${link}`} className="text-decoration-none">
                 <p className={`mb-2 small card-source-text text-end`}>
@@ -35,7 +37,7 @@ const TestimonialsSection = () => {
                                 <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1z" />
                             </svg>
                             <h4>All reviews from platforms included</h4>
-                            <p className="text-start">Nisi sit justo faucibus nec ornare amet, tortor torquent. Blandit class dapibus.</p>
+                            <p className="text-start">This is what clients I have worked with in the past have said about me on platforms like LinkedIn and Upwork.</p>
                         </div>
 
                         <div className="text-start">
