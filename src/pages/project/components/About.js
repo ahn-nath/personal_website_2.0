@@ -5,7 +5,7 @@ const AboutSection = ({description, general_details}) => {
 
   return (
     <section className="about">
-      <div className="container py-xl-5 px-xl-5" style={{ maxWidth: '1200px' }}>
+      <div className="container py-xl-5 px-xl-5 text-with-linebreaks" style={{ maxWidth: '1200px' }}>
         <div className="row g-0 justify-content-center mt-md-5">
 
 
