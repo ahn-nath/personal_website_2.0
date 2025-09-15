@@ -4,7 +4,6 @@ import AboutSection from './components/About';
 import ServicesSection from './components/Services';
 import WorkGallery from './components/WorkGallery';
 import TestimonialsSection from './components/Testimonials';
-import { type } from '@testing-library/user-event/dist/type';
 import creditUsImg from "../../media/credit-us.jpg";
 import csrSchedulerImg from "../../media/calendar.jpg";
 import researchImbalancesImg from "../../media/translation.png";
@@ -71,7 +70,7 @@ const HomePage = () => {
     <div className="homepage-content">
       <Header />
       <AboutSection />
-      <ServicesSection title={"How can I help you?"} services={services} showIcon={true} />
+      <ServicesSection title={"How can I help you?"} services={services} showIcon={true} description={"How can I help you? I design and implement APIs, build pragmatic web MVPs, and create small automation tools to reduce repetitive work and improve delivery."} />
       <WorkGallery title={"My work"} projects={projects} openModalOnClick={false} />
       <TestimonialsSection />
     </div>
