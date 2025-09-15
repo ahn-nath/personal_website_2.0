@@ -1,7 +1,7 @@
 import React from 'react';
 import SocialLink from '../../../components/SocialLink';
 
-const AboutSection = ({description, general_details}) => {
+const AboutSection = ({ description, general_details }) => {
 
   return (
     <section className="about">
@@ -19,21 +19,25 @@ const AboutSection = ({description, general_details}) => {
 
           <div className="col-xl-11 order-xl-2 p-5">
             <table class="table table-bordered table-hover">
-            
-              
+
+
               <tbody>
                 {general_details && general_details.map((detail, index) => (
-                  
+
                   <tr key={index}>
                     <td style={{ width: '5%' }}><i className="bi bi-check-circle-fill text-primary"></i></td>
                     <th style={{ width: '20%' }} scope="row">{detail.label}</th>
-                    <td>{detail.value}</td>
+                    <td>
+                      {typeof detail.value === "object"
+                        ? <a href={detail.value.url} target="_blank" rel="noopener noreferrer">{detail.value.text}</a>
+                        : detail.value}
+                    </td>
                   </tr>
-                  
 
-                  
+
+
                 ))}
-                
+
               </tbody>
             </table>
           </div>

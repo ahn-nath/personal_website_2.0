@@ -19,7 +19,7 @@ const DemoSection = ({ project_links }) => {
            <div className="d-flex flex-wrap gap-5 justify-content-center">
            
                 {project_links.map((pill, i) => (
-                    <a key={i} href={pill.url} className="btn btn-outline-light tech-pill">
+                    <a key={i} href={pill.url} className="btn btn-outline-light tech-pill" target='_blank' rel="noreferrer">
                         <i className={pill.icon}></i> {pill.name}
                     </a>
                 ))}

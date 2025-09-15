@@ -157,7 +157,7 @@ const projects = [
             { label: "Client", value: "Outreachy, Wikimedia Foundation" },
             { label: "Date", value: "Aug 2023" },
             { label: "Category", value: "Tools & scripts for automation" },
-            { label: "Website", value: "https://meta.wikimedia.org/wiki/Research:Content_Translation_language_imbalances" }
+            { label: "Website", value: { text: "Wikimedia Project", url: "https://meta.wikimedia.org/wiki/Research:Content_Translation_language_imbalances" } }
         ],
         features: [],
         gallery_items: [
@@ -187,10 +187,10 @@ const projects = [
             }
         ],
         project_links: [
-            { name: 'GitHub', url: '#', icon: 'bi bi-github' },
-            { name: 'Demo video', url: '#', icon: 'bi bi-camera-reels-fill' },
-            { name: 'Live demo', url: '#', icon: 'bi bi-laptop-fill' },
-            { name: 'Marketplace', url: '#', icon: 'bi bi-bag-dash-fill' },
+            { name: 'GitHub - CSV Time Machine', url: 'https://github.com/ahn-nath/configuration-evolution-over-time.time-machine/tree/main', icon: 'bi bi-github' },
+            { name: 'GitHub - Wikimedia Config Parser', url: 'https://github.com/ahn-nath/wikimedia-cxserver-config-parser/blob/main/requirements.txt', icon: 'bi bi-github' },
+
+
         ]
     }
 ];
