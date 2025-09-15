@@ -1,4 +1,3 @@
-import React from 'react';
 import Header from './components/Header';
 import AboutSection from './components/About';
 import ServicesSection from './components/Services';
@@ -71,7 +70,7 @@ const HomePage = () => {
       <Header />
       <AboutSection />
       <ServicesSection title={"How can I help you?"} services={services} showIcon={true} description={"How can I help you? I design and implement APIs, build pragmatic web MVPs, and create small automation tools to reduce repetitive work and improve delivery."} />
-      <WorkGallery title={"My work"} projects={projects} openModalOnClick={false} />
+      <WorkGallery title={"My work"} projects={projects} openModalOnClick={false} description={"Selected, relevant projects. Click a card to read a detailed case page describing the problem, approach and outcome."} />
       <TestimonialsSection />
     </div>
   );

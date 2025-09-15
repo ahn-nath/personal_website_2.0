@@ -1,11 +1,8 @@
-// components/WorkGallery.jsx
-import React from 'react';
 import ProjectCard from './ProjectCard';
-import Pagination from './Pagination';
 import ImageModal from './ImageModal';
 import { useState } from 'react';
 
-const WorkGallery = ({title, projects = [], openModalOnClick = false}) => {
+const WorkGallery = ({title, projects = [], openModalOnClick = false, description}) => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const handleOpenModal = (projectId) => {
@@ -22,7 +19,7 @@ const WorkGallery = ({title, projects = [], openModalOnClick = false}) => {
           <div className="col-md-8 col-xl-6 text-center mx-auto">
             <h2 className="text-uppercase">{title}</h2>
             <p className="w-lg-50">
-              Selected, relevant projects. Click a card to read a detailed case page describing the problem, approach and outcome.
+              {description}
             </p>
           </div>
         </div>
