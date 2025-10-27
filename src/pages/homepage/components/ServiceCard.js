@@ -19,7 +19,7 @@ const ServiceCard = ({ iconPath, title, description, link, type, showIcon = true
       </div>
       }
 
-      <div className="mx-1">
+      <div className="mx-1  text-with-linebreaks">
         <h4 className="mt-2">{title}</h4>
         <p>{description}</p>
         <a href={link} className='accent-color'>{type}</a>

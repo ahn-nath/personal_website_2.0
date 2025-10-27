@@ -1,15 +1,15 @@
 
+import creditUsImg from "../../../media/credit-us.jpg";
+
+
+
 const TabContentSection = ({ title, texts = [], highlight, isActive=false }) => {
     return (
             <div className="row align-items-center">
                 {/* Left side image placeholder */}
                 <div className="col-md-7 text-center p-4">
-                    <div
-                        className="bg-light d-flex align-items-center justify-content-center"
-                        style={{ minHeight: "250px" }}
-                    >
-                        {/* TODO 1: replace content here with actual image */}
-                        <i className="bi bi-image fs-1 text-secondary"></i>
+                    <div className="bg-light d-flex align-items-center justify-content-center" style={{ minHeight: "250px" }}>
+                        <img className="img-fluid image-gallery" src={creditUsImg} alt={title} />
                         {/* TODO 2: we need to have a feature that open the image as a view like in gallery with Boostrap (?) */}
                     </div>
                 </div>

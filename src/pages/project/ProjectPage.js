@@ -16,7 +16,7 @@ const ProjectPage = () => {
       <HeroHeader title={project ? project.title : "Project Title"} subtitle={project ? project.subtitle : "Project Subtitle"} technologies={project ? project.technologies : []} />
       <AboutSection description={project ? project.description : "Project description..."} general_details={project ? project.general_details : []} />
       <ServicesSection title={"Features"} services={project ? project.features : []} />
-      <ArchitectureDesignSection />
+      <ArchitectureDesignSection tabsData={project ? project.architecture_design_items : []} />
       <WorkGallery title={"Gallery"} projects={project ? project.gallery_items : []} openModalOnClick={true} />
       <DemoSection project_links={project ? project.project_links : []} />
     </div>
