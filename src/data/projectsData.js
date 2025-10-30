@@ -1,4 +1,12 @@
 import creditUsImg from "../media/credit-us.jpg";
+import csvParserWorkflowImg from "../media/wikipedia_csv_parser.png"
+import timeMachineWorkflowImg from "../media/wikipedia_csv_time_machine.png"
+import roleBasedAccessControlMatrixImg from "../media/Role-Based Access Control (RBAC) Matrix .png"
+import erDiagramImg from "../media/Database ER diagram (crow's foot).png"
+import disputeManagementWorkflowImg from "../media/Dispute Management Workflow Diagram.png"
+
+import cityTemperatureOutput from "../media/city_temperature_data_test_csv.png"
+import resultsCommitsAndFilesOutput from "../media/results_commit_and_files_dates.png"
 
 
 const projects = [
@@ -122,37 +130,37 @@ const projects = [
 
         architecture_design_items: [
             {
-                id: "home",
-                label: "Home",
-                title: "Real-time Anomaly Detection",
+                id: "data-model",
+                label: "Data Model",
+                title: "Entity Relationship Diagram for Credit Repair",
                 texts: [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit...",
+                    "The system's data architecture is built around a comprehensive entity relationship model that structures all credit management operations. The core framework extends Django's AbstractUser to support five distinct roles (Admin, Employee, Affiliate, Client, User) with specialized profile models for clients and affiliates. Client records contain encrypted fields for sensitive data including SSN, credit monitoring credentials, and security answers.",
+                    "The model establishes relationships between credit reports from three bureaus (TransUnion, Experian, Equifax), dispute reasons with role-based accessibility, and automatically generated dispute letters. Supporting entities manage invoices, client agreements, referral tracking, and multi-round dispute progression with completion status monitoring.",
                 ],
-                highlight: "60% Reduced False Positives",
-                image: creditUsImg
+                highlight: "",
+                image: erDiagramImg
             },
             {
-                id: "profile",
-                label: "Profile",
-                title: "Profile Section",
+                id: "role-based-access-control",
+                label: "Role-Based Access Control",
+                title: "Role-Based Access Control Matrix",
                 texts: [
-                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
-                    "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+                    "The platform implements a granular role-based access control system defining precise permissions across all data operations. Five user roles have carefully scoped privileges: Clients access only their own data records and associated documents; Affiliates manage exclusively their assigned clients with creation and modification rights; Employees have read-only access across multiple clients; Administrators maintain full system control. Object-level permissions enforce data isolation, while IP address and device fingerprint locking provides additional security for administrative roles.",
+                     "The permission matrix governs all CRUD operations across client profiles, credit reports, dispute management, document generation, and system configuration."
                 ],
-                highlight: "Learn More",
-                image: creditUsImg
+                highlight: "",
+                image: roleBasedAccessControlMatrixImg
             },
             {
-                id: "contact",
-                label: "Contact",
-                title: "Contact Section",
+                id: "dispute-management",
+                label: "Dispute Management",
+                title: "Dispute Management Workflow",
                 texts: [
-                    "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "The dispute workflow system automates credit dispute generation through a structured multi-stage process. The sequence begins with credit report ingestion from integrated monitoring services (IdentityIQ, IdentityClub, 3Scores), followed by item selection across four dispute categories: personal information, account information, public records, and inquiry information. Users apply categorized dispute reasons with role-based filtering, then the system generates bureau-specific dispute letters using dynamic template filling.", 
+                    "The process tracks progression through multiple dispute rounds with completion criteria including letter generation, document submission, and file verification. Each dispute maintains status tracking and connects to client progress monitoring throughout the resolution lifecycle."
                 ],
-                highlight: "Get in Touch",
-                image: creditUsImg
+                highlight: "",
+                image: disputeManagementWorkflowImg
             }
         ],
 
@@ -256,66 +264,54 @@ const projects = [
         features: [],
         architecture_design_items: [
             {
-                id: "home",
-                label: "Home",
-                title: "Real-time Anomaly Detection",
+                id: "csv-parser",
+                label: "CSV Parser",
+                title: "CSV Parser Workflow",
                 texts: [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit...",
+                    "A specialized parser that transforms complex, multi-file Wikimedia configuration data into a clean, analyzable dataset.",
+                    "- Multi-File Aggregation: Intelligently parses and combines data from numerous YAML files within a directory structure into a single, flat in-memory model.",
+                    "- Language Pair Extraction: Extracts and normalizes all supported source-and-target language pairs from the configuration into a standardized format.",
+                    "- CSV Export: Outputs a clean, ready-to-analyze CSV file, making complex config data accessible for spreadsheet analysis or dashboard ingestion.",
+                    "- Schema Consistency: Ensures a consistent data output schema for reliable analysis.",
+                    "Tech: Python • PyYAML • csvdiff"
                 ],
-                highlight: "60% Reduced False Positives"
+                highlight: "",
+                image: csvParserWorkflowImg
             },
             {
-                id: "profile",
-                label: "Profile",
-                title: "Profile Section",
+                id: "csv-time-machine",
+                label: "CSV Time Machine",
+                title: "CSV Time Machine Workflow",
                 texts: [
-                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
-                    "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
-                ],
-                highlight: "Learn More"
-            },
-            {
-                id: "contact",
-                label: "Contact",
-                title: "Contact Section",
-                texts: [
-                    "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                ],
-                highlight: "Get in Touch"
+                    "A version control system for data, enabling full historical tracking and restoration for any CSV file within a git repository.",
+                    "- Historical Tracking & Playback: Parses a repository's entire git history to reconstruct the state of a CSV file at any point in time.",
+                    "- Point-in-Time Restoration: Restore a CSV to its exact state from any previous commit, eliminating manual data recovery.",
+                    "- Temporal Comparison: Visually compare data between any two commits to quickly identify what was added, removed, or changed.",
+                    "- Non-Destructive Updates: Appends new data without rewriting entire files, maintaining a clean and efficient change history.",
+                    "Tech: Python • Git, Python • GitHub API • Octokit"
+                ],  
+                highlight: "",
+                image: timeMachineWorkflowImg
             }
         ],
 
         gallery_items: [
             {
-                image: "https://cdn.bootstrapstudio.io/placeholders/1400x800.png",
+                image: cityTemperatureOutput,
                 tags: [
-                    { label: "API", color: "#0ACF83" },
-                    { label: "2024", color: "#0d6efd" }
                 ],
-                title: "Lorem Ipsum"
+                title: "CSV Parser Output"
             },
             {
-                image: "https://cdn.bootstrapstudio.io/placeholders/1400x800.png",
+                image: resultsCommitsAndFilesOutput,
                 tags: [
-                    { label: "WEB INTEGRATION", color: "#BB0087" },
-                    { label: "2024", color: "#0d6efd" }
                 ],
-                title: "Lorem Ipsum"
-            },
-            {
-                image: "https://cdn.bootstrapstudio.io/placeholders/1400x800.png",
-                tags: [
-                    { label: "AUTOMATION", color: "#0ACF83" },
-                    { label: "2024", color: "#0d6efd" }
-                ],
-                title: "Lorem Ipsum"
+                title: " CSV Time Machine Output"
             }
         ],
         project_links: [
             { name: 'GitHub - CSV Time Machine', url: 'https://github.com/ahn-nath/configuration-evolution-over-time.time-machine/tree/main', icon: 'bi bi-github' },
-            { name: 'GitHub - Wikimedia Config Parser', url: 'https://github.com/ahn-nath/wikimedia-cxserver-config-parser/blob/main/requirements.txt', icon: 'bi bi-github' },
+            { name: 'GitHub - CSV Parser', url: 'https://github.com/ahn-nath/wikimedia-cxserver-config-parser/blob/main/requirements.txt', icon: 'bi bi-github' },
 
 
         ]

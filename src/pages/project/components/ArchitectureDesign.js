@@ -42,6 +42,7 @@ const ArchitectureDesignSection = ({ tabsData = [] }) => {
                 texts={tab.texts}
                 highlight={tab.highlight}
                 isActive={index === 0}
+                image={tab.image}
               />
             </div>
           ))}
