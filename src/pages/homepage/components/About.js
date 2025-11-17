@@ -1,5 +1,6 @@
 import React from 'react';
 import SocialLink from '../../../components/SocialLink';
+import ProfileImage from '../../../media/35_chosen.jpg'
 
 const AboutSection = () => {
   const socialLinks = [
@@ -25,7 +26,7 @@ const AboutSection = () => {
           <div
             className="col-xl-4 text-white mx-auto order-xl-2 showcase-img"
             style={{
-              backgroundImage: "url(https://images.pexels.com/photos/34153/pexels-photo.jpg)",
+              backgroundImage: `url(${ProfileImage})`,
               backgroundPosition: 'center',
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
