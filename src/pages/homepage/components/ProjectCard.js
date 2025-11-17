@@ -1,14 +1,11 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import creditUsImg from "../../../media/credit-us.jpg";
-
 
 const ProjectCard = ({ id, image, tags, title, onOpenModal, openModalOnClick = false }) => {
   // Click handler when modal is desired
   const handleOpen = (e) => {
     e.preventDefault();
     if (onOpenModal) {
-      onOpenModal();
+      onOpenModal(id);
     }
   };
 

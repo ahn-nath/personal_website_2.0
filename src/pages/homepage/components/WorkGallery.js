@@ -55,6 +55,7 @@ const WorkGallery = ({title, projects = [], openModalOnClick = false, descriptio
         onClose={handleCloseModal}
         image={selectedProject?.image}
         title={selectedProject?.title}
+        
       />
     </section>
 

@@ -298,17 +298,19 @@ const projects = [
         ],
 
         gallery_items: [
-            {
+            {   
+                id: 1,
                 image: cityTemperatureOutput,
                 tags: [
                 ],
                 title: "CSV Parser Output"
             },
-            {
+            {   
+                id: 2,
                 image: resultsCommitsAndFilesOutput,
                 tags: [
                 ],
-                title: " CSV Time Machine Output"
+                title: "CSV Time Machine Output"
             }
         ],
         project_links: [
