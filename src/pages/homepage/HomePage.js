@@ -45,6 +45,7 @@ const HomePage = () => {
       ],
       title: "Credit Repair System"
     },
+    /*
     {
       id: "csr-scheduler",
       image: csrSchedulerImg,
@@ -54,6 +55,7 @@ const HomePage = () => {
       ],
       title: "CSR Scheduler Application"
     },
+    */
     {
       id: "research-imbalances-on-wikipedia",
       image: researchImbalancesImg,

@@ -14,6 +14,8 @@ const WorkGallery = ({title, projects = [], openModalOnClick = false, descriptio
 
   return (
     <section id="work-gallery" className="photo-gallery py-5 py-xl-5">
+       {projects && projects.length > 0 ? (
+      
       <div className="container py-5" style={{ background: 'url("/background-container-work-gallery.png") bottom/contain' }}>
         <div className="row">
           <div className="col-md-8 col-xl-6 text-center mx-auto">
@@ -42,6 +44,11 @@ const WorkGallery = ({title, projects = [], openModalOnClick = false, descriptio
 
       </div>
 
+
+             ) : (<div></div>
+                )}
+
+                
       {/* Image Modal: only rendered when a project is selected */}
       <ImageModal
         show={!!selectedProject}
@@ -49,8 +56,10 @@ const WorkGallery = ({title, projects = [], openModalOnClick = false, descriptio
         image={selectedProject?.image}
         title={selectedProject?.title}
       />
-
     </section>
+
+    
+
   );
 };
 
