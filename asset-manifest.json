@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/personal_website_2.0/static/css/main.27ea6d7e.css",
+    "main.js": "/personal_website_2.0/static/js/main.66123e77.js",
+    "static/js/453.00c2c028.chunk.js": "/personal_website_2.0/static/js/453.00c2c028.chunk.js",
+    "static/media/35_chosen.jpg": "/personal_website_2.0/static/media/35_chosen.2ebceed0be21bd2c2693.jpg",
+    "static/media/calendar.jpg": "/personal_website_2.0/static/media/calendar.84360833d4774f59d1e9.jpg",
+    "static/media/credit-us.jpg": "/personal_website_2.0/static/media/credit-us.41b3ee171780dc8010b3.jpg",
+    "static/media/laptop-bg-placeholder.jpg": "/personal_website_2.0/static/media/laptop-bg-placeholder.2869b657e87ce2474d74.jpg",
+    "static/media/results_commit_and_files_dates.png": "/personal_website_2.0/static/media/results_commit_and_files_dates.df55209b2c0323a9b3ed.png",
+    "static/media/translation.png": "/personal_website_2.0/static/media/translation.519edf3bea8fd19b4bd9.png",
+    "static/media/wikipedia_csv_time_machine.png": "/personal_website_2.0/static/media/wikipedia_csv_time_machine.0aa828d1a6758e07184d.png",
+    "static/media/Role-Based Access Control (RBAC) Matrix .png": "/personal_website_2.0/static/media/Role-Based Access Control (RBAC) Matrix .8ccadae40719704efce9.png",
+    "static/media/bootstrap-icons.woff?": "/personal_website_2.0/static/media/bootstrap-icons.1295669cd4e305c97f2c.woff",
+    "static/media/Database ER diagram (crow's foot).png": "/personal_website_2.0/static/media/Database ER diagram (crow's foot).9a092975af4f1d098474.png",
+    "static/media/wikipedia_csv_parser.png": "/personal_website_2.0/static/media/wikipedia_csv_parser.400a6b623a157279cc41.png",
+    "static/media/bootstrap-icons.woff2?": "/personal_website_2.0/static/media/bootstrap-icons.92ea18a81d737146ff04.woff2",
+    "static/media/Dispute Management Workflow Diagram.png": "/personal_website_2.0/static/media/Dispute Management Workflow Diagram.eadacff124bdb929bc90.png",
+    "index.html": "/personal_website_2.0/index.html",
+    "main.27ea6d7e.css.map": "/personal_website_2.0/static/css/main.27ea6d7e.css.map",
+    "main.66123e77.js.map": "/personal_website_2.0/static/js/main.66123e77.js.map",
+    "453.00c2c028.chunk.js.map": "/personal_website_2.0/static/js/453.00c2c028.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.27ea6d7e.css",
+    "static/js/main.66123e77.js"
+  ]
+}
