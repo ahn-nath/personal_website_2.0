@@ -32,11 +32,7 @@ const ProjectCard = ({ id, image, tags, title, onOpenModal, openModalOnClick = f
             className="flip-card-back-body image-gallery"
             style={{ background: 'url("/background-card.png") center/cover no-repeat' }}
           >
-            <h2 style={{ 
-              textShadow: '-2px 1px 4px rgba(0, 0, 0, 0.44)', 
-              color: 'rgb(58, 58, 58)', 
-              letterSpacing: '4px' 
-            }}>
+            <h2 className='heading-flip-back-card'>
               {title}
             </h2>
           </div>
