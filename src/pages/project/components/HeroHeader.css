@@ -5,7 +5,7 @@
   /* layer 1: the image, layer 2: solid color */
   background-image: 
     url('../../../media/laptop-bg-placeholder.jpg'), /* TODO: in the future we may make this dynamic */
-    linear-gradient(#007bff, #007bff);
+    linear-gradient(#1f328a, #2d47ba, #c19703);
   background-size: cover,        /* image covers full area */
                    auto;         /* gradient doesn’t need sizing */
   background-position: center;   /* center the image */

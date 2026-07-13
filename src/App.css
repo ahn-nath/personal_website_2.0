@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,500,700,900');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
 
 * {
   margin: 0;
@@ -7,28 +8,28 @@
 }
 
 .accent-color {
-    color: #04818c;
+    color: #5170ff;
 }
 
 a, .page-link {
-    color: #04818c;
+    color: #5170ff;
     text-decoration: none;
     font-weight: 700;
   letter-spacing: 1px;
 }
 
 .nav-link{
-    color: #04818c;
     text-decoration: none;
     font-weight: 700;
     letter-spacing: 1px;
 }
 
-body, h1,h2,h3,h4,h5,h6,p,a,ul,li,span,div {
+body, h5,h6,p,a,ul,li,span,div {
   font-family: 'Raleway', sans-serif;
 }
 
-h1, h2, h3{
+h1, h2, h3, h4{
+  font-family: 'League Spartan';
 
   text-transform: uppercase;
 }
@@ -84,7 +85,7 @@ h1, h2, h3{
 }
 /* Aesthetics */
 .top-section{
-    background: linear-gradient(135deg, #ffffff 0%, #00454b94 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #5170ff87 100%);
 
 }
 .section-header h1{
@@ -97,7 +98,7 @@ h1, h2, h3{
 }
 
 .section-header h3{
-  color: #00454b;
+  color: #2a42a9c7;
   text-transform: uppercase;
   font-weight: 900;
   letter-spacing: 7px;
@@ -177,7 +178,7 @@ h1, h2, h3{
 
 .bs-icon.bs-icon-primary {
   color: white;
-  background: blue;
+  background: #5170ff;
 }
 
 .bs-icon.bs-icon-circle {

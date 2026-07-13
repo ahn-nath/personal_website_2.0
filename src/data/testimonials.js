@@ -249,7 +249,15 @@ In addition to her technical expertise, Nathaly’s ability to mentor junior dev
         "link": "https://www.upwork.com/freelancers/~0138ecfcda52ffec5e",
         "isDark": false,
         "date": "01-2025"
+      },
+      {
+        "text": `’ve had the pleasure of working with Nathaly for nearly 12 months at Kinde, where she’s been an invaluable member of our support engineering team covering the Americas time zone.Nathaly consistently demonstrates technical depth and customer empathy in equal measure. She handles front-line support with efficiency and care, whether that’s providing first responses, troubleshooting complex issues, or crafting code snippets that help customers get unstuck quickly. She also plays a critical role in triaging requests back to our core engineering team, ensuring nothing falls through the cracks.What sets Nathaly apart is the breadth of her contributions beyond day-to-day support. She’s actively involved in QA for new features, helps write and improve our documentation, and has contributed to strengthening our SDKs and starter kits. She doesn’t wait to be asked, she sees opportunities to make things better and acts on them.Nathaly is proactive, communicative, and genuinely easy to work with. She feels like a core part of our team, not a contractor on the periphery. I’d recommend her without hesitation to anyone looking for a technically capable support engineer who takes real ownership of their work.`,
+        "author": "Andre Selton",
+        "source": "Internal feedback",
+        "isDark": true,
+        "date": "01-2026"
       }
+
   ]
 
 

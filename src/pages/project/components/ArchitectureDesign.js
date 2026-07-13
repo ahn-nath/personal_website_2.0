@@ -11,7 +11,7 @@ const ArchitectureDesignSection = ({ tabsData = [] }) => {
           {tabsData.map((tab, index) => (
             <li className="nav-item" role="presentation" key={tab.id}>
               <button 
-                className={`nav-link ${index === 0 ? 'active' : ''}`}
+                className={`nav-link accent-color ${index === 0 ? 'active' : ''}`}
                 id={`${tab.id}-tab`}
                 data-bs-toggle="tab"
                 data-bs-target={`#${tab.id}`}

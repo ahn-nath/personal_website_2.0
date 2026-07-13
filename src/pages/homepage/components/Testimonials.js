@@ -4,7 +4,7 @@ import testimonialsSlides from "../../../data/testimonials";
 const TestimonialCard = ({ text, author, source, link, isDark }) => {
     return (
         <div className={`card ${isDark ? 'dark-card' : 'card-light'} border-0 my-3`}>
-            <div className="card-body p-4">
+            <div className="card-body p-5">
                 <p className="text-start card-text text-gray-700 text-with-linebreaks">
                     {text}
                 </p>
