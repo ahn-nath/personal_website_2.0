@@ -71,8 +71,8 @@ const HomePage = () => {
     <div className="homepage-content">
       <Header />
       <AboutSection />
-      <ServicesSection title={"How can I help you?"} services={services} showIcon={true} description={"How can I help you? I design and implement APIs, build pragmatic web MVPs, and create small automation tools to reduce repetitive work and improve delivery."} />
-      <WorkGallery title={"My work"} projects={projects} openModalOnClick={false} description={"Selected, relevant projects. Click a card to read a detailed case page describing the problem, approach and outcome."} />
+      <ServicesSection title={"Core Services"} services={services} showIcon={true} description={"How can I help you? I design and implement APIs, build pragmatic web MVPs, and create small automation tools to reduce repetitive work and improve delivery."} />
+      <WorkGallery title={"Work Gallery"} projects={projects} openModalOnClick={false} description={"Selected, relevant projects. Click a card to read a detailed case page describing the problem, approach and outcome."} />
       <TestimonialsSection />
     </div>
   );

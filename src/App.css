@@ -7,6 +7,7 @@
   border: none;
 }
 
+
 .accent-color {
     color: #5170ff;
 }
@@ -84,10 +85,28 @@ h1, h2, h3, h4{
   text-align: center;
 }
 /* Aesthetics */
+
+
 .top-section{
     background: linear-gradient(135deg, #ffffff 0%, #5170ff87 100%);
-
 }
+
+/* Full-screen blue background */
+.hero-header-home {
+  /* layer 1: the image, layer 2: solid color */
+  background-image: 
+    url('media/hd9.jpg'), /* TODO: could be hd1, hd2, hd5, hd8, hd6, hd9 */
+   linear-gradient(135deg, #ffffff 0%, #5170ff87 100%, #c19703);
+  background-size: cover,        /* image covers full area */
+                   auto;         /* gradient doesn’t need sizing */
+  background-position: center;   /* center the image */
+  background-repeat: no-repeat;  
+  background-blend-mode: hard-light; /* or “multiply” for a darker effect */
+  color: #fff;
+  position: relative; /* if you want to use pseudo-elements elsewhere */
+}
+
+
 .section-header h1{
   font-size: 200px;
   font-weight: 900;
@@ -98,10 +117,12 @@ h1, h2, h3, h4{
 }
 
 .section-header h3{
-  color: #2a42a9c7;
+  color: #fff; /*#2a42a9c7*/
   text-transform: uppercase;
   font-weight: 900;
   letter-spacing: 7px;
+  background: #222;
+  padding: 5px 10px;
 }
 
 /* Responsive */
@@ -243,6 +264,7 @@ h1, h2, h3, h4{
 .testimonials {
     padding-top: 7rem;
     padding-bottom: 7rem;
+    background-color: rgb(242 242 242) !important;
 }
 
 .card{
@@ -258,6 +280,18 @@ h1, h2, h3, h4{
 
 .dark-card .card-source-text{
   color: lightgray;
+}
+
+/* Services */
+.service-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #ffffff;
+    padding: 1.5rem 1.7rem;
+    background: white;
+    color: #222; 
 }
 
 /* Other */
