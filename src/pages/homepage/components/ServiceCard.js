@@ -6,16 +6,8 @@ const ServiceCard = ({ iconPath, title, description, link, type, showIcon = true
 
       {showIcon &&
       <div className="bs-icon-lg bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon lg">
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          width="1em" 
-          height="1em" 
-          fill="currentColor"
-          viewBox="0 0 16 16" 
-          className="bi fs-3"
-        >
-          <path d={iconPath} />
-        </svg>
+
+        <i class={iconPath}></i>
       </div>
       }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import ServiceCard from './ServiceCard';
 
-const ServicesSection = ({title, description, services = [], showIcon = true}) => {
+const ServicesSection = ({title, description, services = [], showIcon = false}) => {
 
   return (
    
