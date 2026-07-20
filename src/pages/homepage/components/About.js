@@ -23,16 +23,13 @@ const AboutSection = () => {
       <div className="container py-xl-5 px-xl-5" style={{ maxWidth: '1200px' }}>
         <div className="row g-0 justify-content-center mt-md-5">
 
-          <div
-            className="col-xl-4 text-white mx-auto order-xl-2 showcase-img"
-            style={{
-              backgroundImage: `url(${ProfileImage})`,
-              backgroundPosition: 'center',
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-              minHeight: '300px',
-            }}
-          />
+          <div className="col-xl-4 mx-auto order-xl-2 showcase-img about-profile">
+            <img
+              src={ProfileImage}
+              alt="Nathaly Toledo"
+              className="about-profile-img"
+            />
+          </div>
 
           <div className="col-xl-7 order-xl-1 p-5">
             <h2 className="text-uppercase text-center mb-4">About</h2>
