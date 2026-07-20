@@ -1,7 +1,8 @@
-
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import HomePage from './pages/homepage/HomePage';
 import ProjectPage from './pages/project/ProjectPage';
+import Footer from './components/Footer';
+import SocialIcons from './components/SocialIcons';
 import './App.css';
 
 
@@ -10,26 +11,23 @@ export default function App() {
     <BrowserRouter>
       <div className="App">
 
-        {/* Simple header / nav — use Link instead of <a> */}
-        <header className="py-3 px-4 d-flex justify-content-end">
-          <nav className="d-flex gap-3 align-items-center">
+        <header className="site-topbar">
+          <nav className="site-topbar-nav" aria-label="Primary">
             <Link to="/" className="nav-link text-dark">Home</Link>
           </nav>
+          <div className="site-topbar-divider" aria-hidden="true" />
+          <SocialIcons className="site-topbar-socials" />
         </header>
 
-        {/* Declarative routes */}
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/projects/:id" element={<ProjectPage />} />
-
-
-            {/* Optional: 404 route */}
-            {/* <Route path="*" element={<NotFound />} /> */}
           </Routes>
         </main>
+
+        <Footer />
       </div>
     </BrowserRouter>
   );
 }
-
