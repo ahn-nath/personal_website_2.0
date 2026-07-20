@@ -9,7 +9,7 @@ const ServicesSection = ({title, description, services = [], showIcon = false}) 
     <section id="services">
                 {services && services.length > 0 ? (
 
-      <div className="container py-5 py-xl-5 text-white px-5" style={{ background: '#222222' }}>
+      <div className="container py-5 py-xl-5 text-white px-4 px-sm-5" style={{ background: '#222222' }}>
         <div id="services-inner-wrapper" className="py-5">
           <div className="row mb-5">
             <div className="col-md-8 col-xl-6 text-center mx-auto">

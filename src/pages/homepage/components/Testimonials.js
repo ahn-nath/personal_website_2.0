@@ -4,7 +4,7 @@ import testimonialsSlides from "../../../data/testimonials";
 const TestimonialCard = ({ text, author, source, link, isDark }) => {
     return (
         <div className={`card ${isDark ? 'dark-card' : 'card-light'} border-0 my-3`}>
-            <div className="card-body p-5">
+            <div className="card-body p-4 p-sm-5">
                 <p className="text-start card-text text-gray-700 text-with-linebreaks">
                     {text}
                 </p>
@@ -23,7 +23,7 @@ const TestimonialsSection = () => {
 
     return (
         <section className="text-center bg-light testimonials" id="testimonials">
-            <div className="container p-5" style={{ background: 'var(--bs-body-bg)' }}>
+            <div className="container p-4 p-sm-5" style={{ background: 'var(--bs-body-bg)' }}>
                 <div className="row mb-5">
                     <div className="col-md-8 col-xl-6 text-center mx-auto">
                         <h2>Testimonials</h2>
@@ -64,7 +64,7 @@ const TestimonialsSection = () => {
                                 {testimonialsSlides.map((slide, index) => (
                                     
                                     <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
-                                        <div className="row gy-4 mb-5 pb-3 mx-3">
+                                        <div className="row gy-4 mb-5 pb-3 mx-sm-3 mx-1">
                                                 <div key={index} className='col'>
                                                     <TestimonialCard {...slide} />
                                                 </div>

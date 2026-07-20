@@ -23,7 +23,7 @@ const AboutSection = () => {
       <div className="container py-xl-5 px-xl-5" style={{ maxWidth: '1200px' }}>
         <div className="row g-0 justify-content-center mt-md-5">
 
-          <div className="col-xl-4 mx-auto order-xl-2 showcase-img about-profile">
+          <div className="col-xl-4 mx-auto order-xl-2 showcase-img about-profile mt-5">
             <img
               src={ProfileImage}
               alt="Nathaly Toledo"
@@ -31,7 +31,7 @@ const AboutSection = () => {
             />
           </div>
 
-          <div className="col-xl-7 order-xl-1 p-5">
+          <div className="col-xl-7 order-xl-1 py-5 px-4 px-sm-5">
             <h2 className="text-uppercase text-center mb-4">About</h2>
             <p className="lead mb-0">
               Nathaly Toledo is a top rated (top 10% on Upwork) full-stack developer with over 4 years of experience building solutions for global clients.

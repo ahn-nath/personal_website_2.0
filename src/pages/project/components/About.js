@@ -6,10 +6,10 @@ const AboutSection = ({ description, general_details }) => {
   return (
     <section className="about">
       <div className="container py-xl-5 px-xl-5 text-with-linebreaks" style={{ maxWidth: '1200px' }}>
-        <div className="row g-0 justify-content-center mt-md-5">
+        <div className="row g-0 justify-content-center mt-5">
 
 
-          <div className="col-xl-11 order-xl-1 px-5">
+          <div className="col-xl-11 order-xl-1 py-5 px-4 px-sm-5">
             <h2 className="text-uppercase text-center mb-4">DESCRIPTION</h2>
             <p className="lead mb-0">
               {description}
@@ -17,7 +17,7 @@ const AboutSection = ({ description, general_details }) => {
 
           </div>
 
-          <div className="col-xl-11 order-xl-2 p-5">
+          <div className="col-xl-11 order-xl-2 py-5 px-4 px-sm-5">
             <table class="table table-bordered table-hover">
 
 
