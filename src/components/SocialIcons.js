@@ -1,8 +1,11 @@
+import { useLanguage } from '../context/LanguageContext';
 import { socialLinks } from '../data/socialLinks';
 
 export default function SocialIcons({ className = '' }) {
+  const { t } = useLanguage();
+
   return (
-    <nav className={`social-icons ${className}`.trim()} aria-label="Social media">
+    <nav className={`social-icons ${className}`.trim()} aria-label={t('social.navAria')}>
       {socialLinks.map((link) => (
         <a
           key={link.name}

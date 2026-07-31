@@ -3,76 +3,70 @@ import AboutSection from './components/About';
 import ServicesSection from './components/Services';
 import WorkGallery from './components/WorkGallery';
 import TestimonialsSection from './components/Testimonials';
-import creditUsImg from "../../media/credit-us.jpg";
-import csrSchedulerImg from "../../media/calendar.jpg";
-import researchImbalancesImg from "../../media/translation.png";
-
+import creditUsImg from '../../media/credit-us.jpg';
+import csrSchedulerImg from '../../media/calendar.jpg';
+import researchImbalancesImg from '../../media/translation.png';
+import { useLanguage } from '../../context/LanguageContext';
 
 const HomePage = () => {
+  const { t } = useLanguage();
 
-  const services = [
-    {
-      iconPath: "bi bi-easel2",
-      title: "CLOUD ARCHITECTURE & DEVELOPMENT",
-      description: "End-to-end design, deployment, and scaling of cloud-native applications. I architect robust, fault-tolerant software that guarantee high availability and system reliability for local and global markets.",
-      link: "#",
-      type: "Tag name: Architecture design, Software engineering"
-    },
-     {
-      iconPath: "bi bi-fast-forward",
-      title: "ENTERPRISE WORKFLOW AUTOMATION",
-      description: "Eliminating manual bottlenecks through programmatic solutions. I engineer custom data pipelines, system integrations, and scripts that drastically reduce operational overhead and accelerate business delivery.",
-      link: "#",
-      type: "Tag name: Tools & Scripting"
-    },
-    {
-      iconPath: "bi bi-graph-up-arrow",
-      title: "Consultancy",
-      description: "Strategic advisory: Expert software architecture design to help businesses build and scale reliable cloud systems, OR high-leverage performance frameworks to guide independent professionals across any industry in optimizing and scaling their freelance operations.",
-      link: "#",
-      type: "Tag name: Mentorship"
-    }
-  ];
+  const serviceIcons = ['bi bi-easel2', 'bi bi-fast-forward', 'bi bi-graph-up-arrow'];
+  const serviceItems = t('home.services.items') || [];
+  const services = serviceItems.map((item, index) => ({
+    iconPath: serviceIcons[index],
+    title: item.title,
+    description: item.description,
+    link: '#',
+    type: item.type,
+  }));
 
-  // TODO: This has to come from the central projects object
   const projects = [
     {
-      id: "credit-repair-system",
+      id: 'credit-repair-system',
       image: creditUsImg,
       tags: [
-        { label: "API", color: "#0ACF83" },
-        { label: "2024", color: "#0d6efd" }
+        { label: 'API', color: '#0ACF83' },
+        { label: '2024', color: '#0d6efd' },
       ],
-      title: "Credit Repair System"
+      title: t('home.gallery.projects.credit-repair-system'),
     },
-    
     {
-      id: "csr-scheduler",
+      id: 'csr-scheduler',
       image: csrSchedulerImg,
       tags: [
-        { label: "WEB", color: "#BB0087" },
-        { label: "2024", color: "#0d6efd" }
+        { label: 'WEB', color: '#BB0087' },
+        { label: '2024', color: '#0d6efd' },
       ],
-      title: "CSR Scheduler Application"
+      title: t('home.gallery.projects.csr-scheduler'),
     },
-    
     {
-      id: "research-imbalances-on-wikipedia",
+      id: 'research-imbalances-on-wikipedia',
       image: researchImbalancesImg,
       tags: [
-        { label: "TOOLS & SCRIPTING", color: "#0ACF83" },
-        { label: "2024", color: "#0d6efd" }
+        { label: 'TOOLS & SCRIPTING', color: '#0ACF83' },
+        { label: '2024', color: '#0d6efd' },
       ],
-      title: "Research imbalances on Wikipedia"
-    }
+      title: t('home.gallery.projects.research-imbalances-on-wikipedia'),
+    },
   ];
-  
+
   return (
     <div className="homepage-content">
       <Header />
       <AboutSection />
-      <ServicesSection title={"Core Services"} services={services} showIcon={true} description={"How can I help you? I design and implement APIs, build pragmatic web MVPs, and create small automation tools to reduce repetitive work and improve delivery."} />
-      <WorkGallery title={"Work Gallery"} projects={projects} openModalOnClick={false} description={"Selected, relevant projects. Click a card to read a detailed case page describing the problem, approach and outcome."} />
+      <ServicesSection
+        title={t('home.services.title')}
+        services={services}
+        showIcon={true}
+        description={t('home.services.description')}
+      />
+      <WorkGallery
+        title={t('home.gallery.title')}
+        projects={projects}
+        openModalOnClick={false}
+        description={t('home.gallery.description')}
+      />
       <TestimonialsSection />
     </div>
   );

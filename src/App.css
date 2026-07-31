@@ -341,6 +341,33 @@ h1, h2, h3, h4{
   gap: 0.9rem;
 }
 
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.lang-toggle-btn {
+  border: none;
+  background: transparent;
+  color: #555;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.4rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.lang-toggle-btn.is-active {
+  color: #c19703;
+}
+
+.lang-toggle-btn:hover,
+.lang-toggle-btn:focus-visible {
+  color: #5170ff;
+}
+
 /* Shared social icons */
 .social-icons {
   display: flex;
