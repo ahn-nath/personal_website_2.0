@@ -6,6 +6,7 @@ import TestimonialsSection from './components/Testimonials';
 import creditUsImg from '../../media/credit-us.jpg';
 import csrSchedulerImg from '../../media/calendar.jpg';
 import researchImbalancesImg from '../../media/translation.png';
+import brainsetAuthImg from '../../media/auth_screen.png';
 import { useLanguage } from '../../context/LanguageContext';
 
 const HomePage = () => {
@@ -23,6 +24,15 @@ const HomePage = () => {
 
   const projects = [
     {
+      id: 'brainset-production-os',
+      image: brainsetAuthImg,
+      tags: [
+        { label: 'WEB / SAAS', color: '#0ACF83' },
+        { label: '2026', color: '#0d6efd' },
+      ],
+      title: t('home.gallery.projects.brainset-production-os'),
+    },
+    {
       id: 'credit-repair-system',
       image: creditUsImg,
       tags: [
@@ -36,7 +46,7 @@ const HomePage = () => {
       image: csrSchedulerImg,
       tags: [
         { label: 'WEB', color: '#BB0087' },
-        { label: '2024', color: '#0d6efd' },
+        { label: '2025', color: '#0d6efd' },
       ],
       title: t('home.gallery.projects.csr-scheduler'),
     },

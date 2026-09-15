@@ -55,8 +55,9 @@
       "title": "Galería de trabajo",
       "description": "Proyectos seleccionados y relevantes. Haz clic en una tarjeta para leer un caso detallado con el problema, el enfoque y el resultado.",
       "projects": {
+        "brainset-production-os": "Brainset Production OS",
         "credit-repair-system": "Sistema de reparación de crédito",
-        "csr-scheduler": "Aplicación CSR Scheduler",
+        "csr-scheduler": "CSR Scheduler: reemplazo de Job Runner",
         "research-imbalances-on-wikipedia": "Desequilibrios de investigación en Wikipedia"
       }
     },

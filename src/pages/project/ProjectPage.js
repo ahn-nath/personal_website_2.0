@@ -42,7 +42,9 @@ const ProjectPage = () => {
         projects={project ? project.gallery_items : []}
         openModalOnClick={true}
       />
-      <DemoSection project_links={project ? project.project_links : []} />
+      {project?.project_links?.length > 0 && (
+        <DemoSection project_links={project.project_links} />
+      )}
     </div>
   );
 };

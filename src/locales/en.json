@@ -55,8 +55,9 @@
       "title": "Work Gallery",
       "description": "Selected, relevant projects. Click a card to read a detailed case page describing the problem, approach and outcome.",
       "projects": {
+        "brainset-production-os": "Brainset Production OS",
         "credit-repair-system": "Credit Repair System",
-        "csr-scheduler": "CSR Scheduler Application",
+        "csr-scheduler": "CSR Scheduler: Job Runner Replacement",
         "research-imbalances-on-wikipedia": "Research imbalances on Wikipedia"
       }
     },
