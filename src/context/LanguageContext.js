@@ -86,12 +86,16 @@ export function localizeProject(project, overlay) {
   };
 }
 
+const DEFAULT_LANG = 'en';
+const SUPPORTED_LANGS = new Set(['en', 'es']);
+
 export function LanguageProvider({ children }) {
   const [lang, setLangState] = useState(() => {
     try {
-      return localStorage.getItem('site-lang') || 'en';
+      const stored = localStorage.getItem('site-lang');
+      return SUPPORTED_LANGS.has(stored) ? stored : DEFAULT_LANG;
     } catch {
-      return 'en';
+      return DEFAULT_LANG;
     }
   });
 

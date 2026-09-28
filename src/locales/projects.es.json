@@ -1,85 +1,92 @@
 {
   "brainset-production-os": {
     "title": "Brainset — Production OS",
-    "subtitle": "SaaS multi-tenant que gestiona producciones audiovisuales de punta a punta, endurecido y conectado para que los equipos de producción puedan apoyarse en él a diario.",
-    "description": "Brainset es una plataforma multi-tenant para productoras audiovisuales —publicidad, digital, cine y videoclips— que reúne calendario, tareas, schedules, crew, casting, locaciones, transporte, proveedores, call sheets, viajes, creativo y presupuesto en un solo sistema. Al comenzar el trabajo el producto tenía muchas funcionalidades pero todavía no era confiable: los módulos vivían aislados, las subidas de archivos aceptaban cualquier cosa que enviara el navegador, las fechas se corrían un día según la zona horaria del usuario y los PDF llegaban en blanco al correo del cliente. Nada de eso aparece en una lista de features, y todo eso impide que un equipo confíe en la herramienta el día de rodaje.\n\nEl trabajo apuntó a los caminos por donde pasan los documentos reales de producción. Las subidas quedaron bajo una política de seguridad compartida: validación de extensión, tipo MIME y firma de los primeros bytes, aplicada en cada presign, commit, copia y promoción, en lugar de ocho listas permitidas por módulo. El commit de una subida se volvió seguro ante concurrencia y correcto en el consumo de almacenamiento, con claves únicas, locks de Postgres, verificación de que el objeto realmente existe antes de escribir la fila y una vía de limpieza para las subidas firmadas que nunca se confirmaron. Los campos de día de calendario pasaron a columnas DATE detrás de un contrato explícito «YYYY-MM-DD», lo que eliminó el desfase de un día en las fechas de scouting, las exportaciones y los documentos generados.\n\nSobre esa base llegaron las funcionalidades que pedían los productores: un selector de destinatarios para que la call sheet llegue exactamente al crew elegido, adjuntos de aprobación con topes de tamaño acordes a lo que un proveedor de correo realmente entrega, notas de aprobación reutilizables con editor de texto enriquecido y saneamiento, el logo de la agencia en el encabezado de la call sheet, y un onboarding de crew que distingue un deal memo enviado de uno abierto y firmado, más una acción que descarga todos los deal memos firmados del proyecto en un ZIP. Todo entregado en 12 pull requests revisados a lo largo de un mes, unas 3.700 líneas agregadas en 88 archivos, cada uno acordado y aceptado contra criterios de éxito definidos antes de pasar a producción.",
+    "subtitle": "SaaS multi-tenant para productoras audiovisuales, llevado desde una base ya completa en funcionalidades hacia un MVP estable y listo para producción.",
+    "description": "Brainset es una plataforma multi-tenant para productoras audiovisuales que reúne calendario, tareas, crew, casting, locaciones, transporte, proveedores, call sheets, viajes, creativo y presupuesto en un solo sistema. La plataforma llegó con un 80–90 % construido: los módulos ya existían y funcionaban. Lo que faltaba para producción era conectarlos, endurecer los caminos por donde pasan los documentos reales de producción y cerrar las brechas que solo aparecen con el uso diario en rodaje.\n\nMi rol fue llevar esa base a un estándar listo para producción en cinco áreas: seguridad de subidas, integridad del almacenamiento, distribución y aprobación de call sheets, onboarding de crew y corrección de fechas de calendario. Doce pull requests revisados en alrededor de un mes, unas 3.700 líneas en 88 archivos. Cada tarea partió de criterios de éxito y una estimación de tiempo acordados con el cliente, y se validó en staging antes de la aprobación del cliente para su publicación.\n\nEl cliente me pidió trabajar con Claude como parte del flujo de entrega: exploración del código, borradores de implementación y revisiones contra las convenciones multi-tenant del repositorio. Las tareas se estimaron con apoyo de IA y la mayoría se cerró en menos tiempo que el estimado.",
     "general_details": [
       { "label": "Cliente", "value": "Brain Productions (Brainset)" },
       { "label": "Fecha", "value": "ago 2026 – sep 2026" },
+      { "label": "Rol", "value": "Desarrolladora full-stack — estabilización del MVP hacia producción" },
       { "label": "Categoría", "value": "Desarrollo full-stack y estabilización de plataforma" },
+      { "label": "Herramientas de IA", "value": "Claude, a pedido del cliente — la mayoría de tareas cerradas bajo el estimado" },
       { "label": "Sitio web", "valueText": "brainset.io" }
     ],
     "features": [
       {
-        "title": "Bloqueo de ejecutables en todas las subidas",
-        "description": "- Una única política compartida reemplazó las listas permitidas de cada módulo, así una superficie de subida nueva hereda la regla en vez de reabrir el agujero sin que nadie lo note.\n\n- Rechaza archivos por extensión y por tipo MIME, e inspecciona los primeros bytes buscando firmas PE, ELF, Mach-O, class de Java y shebang, que es lo que atrapa un binario renombrado a .pdf.\n\n- Se aplica en presign, commit, copia y promoción: validar solo el presign dejaría la puerta de atrás de confirmar con otro nombre de archivo.\n\n- Las miniaturas también se validan, cerrando un camino por el que un binario renombrado pasaba el chequeo de existencia y se llevaba puesto el archivo original.\n\n- Las mismas reglas corren en el cliente para dar feedback inmediato, sin convertirse en la única línea de defensa.",
+        "title": "Subidas de archivos endurecidas",
+        "description": "- Una política compartida reemplazó las listas permitidas de cada módulo, así toda superficie de subida nueva la hereda.\n\n- Valida extensión, tipo MIME y firma de los primeros bytes: es lo que atrapa un binario renombrado a .pdf.\n\n- Se aplica en presign, commit, copia y promoción, miniaturas incluidas.",
         "type": "Seguridad"
       },
       {
         "title": "Integridad de las subidas y consumo de almacenamiento",
-        "description": "- Restricciones de unicidad sobre las claves de los objetos guardados, para que una misma subida no pueda generar dos filas.\n\n- El commit y la limpieza se serializan con locks de Postgres dentro de la transacción que actualiza el contador de almacenamiento, de modo que dos subidas simultáneas no cuenten dos veces el consumo de la organización.\n\n- El backend verifica que el objeto exista realmente en el almacenamiento antes de crear su fila, en lugar de confiar en que el cliente diga que la subida terminó.\n\n- Una ruta de limpieza descarta las subidas firmadas que nunca se confirmaron, así un formulario abandonado antes del primer guardado deja de dejar archivos huérfanos.\n\n- Un borrado que falla ahora levanta error en vez de pasar en silencio, que es lo que hacía invisibles los restos anteriores.",
+        "description": "- Claves de objeto únicas y locks de Postgres evitan que dos subidas simultáneas cuenten dos veces el consumo de la organización.\n\n- El objeto se verifica en el almacenamiento antes de escribir la fila en la base.\n\n- Las subidas abandonadas antes de guardar se limpian en lugar de quedar huérfanas.",
         "type": "Confiabilidad"
       },
       {
         "title": "Distribución de call sheets con control de destinatarios",
-        "description": "- El productor elige exactamente quién recibe cada call sheet: seleccionar o limpiar todo, desplegar el crew por departamento y marcar personas de forma individual.\n\n- Solo se envía a los marcados que tengan un email válido, lo que termina con el envío todo-o-nada que filtraba borradores a todo el crew.\n\n- El reintento automático a los rebotes conserva su comportamiento y no pasa por el selector a propósito, para que una entrega fallida siga llegando a su destinatario original.",
+        "description": "- El productor elige destinatarios por departamento o de forma individual, en vez de enviar a todos.\n\n- Solo recibe el envío el crew seleccionado que tenga un email válido.\n\n- El reintento automático a los rebotes sigue llegando a su destinatario original.",
         "type": "Flujo de trabajo"
       },
       {
         "title": "Adjuntos de aprobación y notas reutilizables",
-        "description": "- El material de apoyo se deja preparado en la ronda de aprobación, viaja con el correo y se consume solo cuando ese correo se envía con éxito.\n\n- Los topes por archivo, por ronda y por mensaje se verifican antes de abrir la ronda, así una aprobación no falla en el último paso por exceder lo que el proveedor de correo acepta.\n\n- La nota de aprobación se escribe en un editor de texto enriquecido y se guarda como template del proyecto con resolución de placeholders, para que salga siempre la misma redacción; se renderiza a través de un saneador, lo que mantiene el marcado inseguro fuera del correo y de la página pública de aprobación.\n\n- La agencia pasó a ser un campo propio del proyecto, así su logo se imprime en el encabezado de la call sheet junto al de la productora.",
+        "description": "- Los adjuntos se preparan en la ronda de aprobación y viajan con el correo.\n\n- Los topes de tamaño se verifican de antemano, así una aprobación no falla en el último paso.\n\n- Las notas con formato se guardan como templates del proyecto con placeholders, saneadas antes del envío.",
         "type": "Documentos"
       },
       {
-        "title": "Visibilidad del onboarding de crew y descarga masiva de deal memos",
-        "description": "- Una marca de visualización en los documentos firmados separa un deal memo enviado de uno realmente abierto, que es la diferencia que un coordinador persigue por teléfono.\n\n- La tabla de onboarding lee el último deal memo de cada integrante y muestra estado, fechas de envío, recepción y firma, datos del firmante y una descarga individual.\n\n- Una sola acción renderiza todos los deal memos firmados del proyecto y los envía en un ZIP, con tope de archivos, nombres saneados y manejo de cancelación para que una descarga abortada no deje al servidor trabajando.",
+        "title": "Onboarding de crew y deal memos",
+        "description": "- Una marca de visualización separa un deal memo enviado de uno abierto.\n\n- Estado, fechas de envío, recepción y firma, y datos del firmante en una sola tabla.\n\n- Todos los deal memos firmados del proyecto se descargan en un único ZIP.",
         "type": "Flujo de trabajo"
       },
       {
-        "title": "Correcciones que bloqueaban el uso diario",
-        "description": "- Las fechas de scouting pasaron a ser días de calendario de verdad —columnas DATE de Postgres detrás de un contrato «YYYY-MM-DD» con helpers compartidos de parseo y formato—, lo que eliminó el corrimiento de un día en la interfaz, las exportaciones CSV y los releases generados.\n\n- El calendario y el selector de fechas arrancan la semana en domingo, como se leen las semanas de producción, con las etiquetas visibles pasando por el diccionario.\n\n- Los PDF adjuntos dejaron de llegar en blanco: el transporte de correo usaba codificación de 7 bits por defecto, que corrompe contenido binario, y ahora declara base64 de forma explícita.\n\n- Los cargadores de documentos y fotos de locaciones ganaron arrastrar y soltar, acceso por teclado, indicaciones claras de formato y límites de cantidad y tamaño.",
+        "title": "Correcciones para el uso diario",
+        "description": "- Los días de calendario pasaron a DATE de Postgres detrás de un contrato «YYYY-MM-DD», eliminando el corrimiento de un día en interfaz, exportaciones y documentos.\n\n- Semanas que arrancan en domingo, como las lee una producción.\n\n- Los PDF adjuntos ahora declaran base64, así llegan intactos.",
         "type": "Corrección de bugs"
+      },
+      {
+        "title": "Entrega asistida por IA con Claude",
+        "description": "- Flujo solicitado por el cliente: Claude para explorar el código, redactar implementaciones y hacer pasadas de revisión.\n\n- Cada cambio revisado contra las convenciones multi-tenant, Zod y Prisma del repositorio antes de abrir el PR.\n\n- La mayoría de las tareas se cerró en menos tiempo que su estimación asistida por IA.",
+        "type": "Entrega y herramientas"
       }
     ],
     "architecture_design_items": [
       {
         "label": "Seguridad de archivos",
-        "title": "Una sola política de subida en vez de ocho listas permitidas",
+        "title": "Una sola política de subida compartida",
         "texts": [
-          "Cada módulo que acepta archivos —documentos creativos, crew, locaciones, moodboards, storyboards, viajes, proveedores, subidas genéricas— tenía su propia idea de qué era aceptable. El modo de falla de esa forma es previsible: el noveno módulo se escribe sin la regla. La política se extrajo a un módulo único que expone los conjuntos de extensiones y tipos MIME bloqueados, una lectura de extensión que recorta los puntos y espacios finales que el sistema operativo ignora, un campo Zod reutilizable para validar nombres y una verificación de firma sobre los primeros bytes.",
-          "El alcance está declarado con honestidad en el código: es una regla de política sobre la etiqueta del archivo más una mirada a sus bytes iniciales, no un antivirus. Lo que sí garantiza es que las dos vías hacia el almacenamiento —el nombre declarado y el tipo MIME declarado— terminan en el mismo objeto protegido, y que un binario renombrado se detecta por contenido y no por confianza."
+          "Ocho módulos aceptan archivos —documentos creativos, crew, locaciones, moodboards, storyboards, viajes, proveedores y subidas genéricas—, cada uno con su propia idea de qué era aceptable. La regla ahora vive en un módulo único: conjuntos de extensiones y tipos MIME bloqueados, una lectura de nombre que recorta los puntos y espacios finales que el sistema operativo ignora, un campo Zod reutilizable y una verificación de firma sobre los primeros bytes.",
+          "El alcance está declarado con claridad en el código: es una regla de política sobre la etiqueta del archivo más sus bytes iniciales, no un antivirus. Lo que garantiza es que las dos vías hacia el almacenamiento —nombre declarado y tipo MIME declarado— terminan en el mismo objeto protegido, y que un binario renombrado se detecta por contenido y no por confianza."
         ]
       },
       {
         "label": "Integridad de subidas",
         "title": "Commits que sobreviven a la concurrencia y a los formularios abandonados",
         "texts": [
-          "Las subidas siguen el patrón de URL firmada: el navegador manda los bytes directo al almacenamiento de objetos y el backend solo firma la petición y registra el resultado. Ese reparto deja dos huecos. Dos commits que llegan juntos pueden sumar los mismos bytes al contador de la organización, y quien sube un archivo y cierra el formulario sin guardar deja objetos que nadie referencia.",
-          "Los dos huecos se cerraron en el camino de escritura. Las claves de los objetos son únicas por colección, el commit verifica que el objeto exista antes de insertar, y la inserción junto con la actualización del contador ocurren en una sola transacción protegida por un lock de Postgres, de modo que los chequeos de cuota y de cantidad vean una foto consistente. Un endpoint de limpieza elimina las subidas firmadas que nunca se confirmaron, la interfaz fuerza esa limpieza antes de cerrar un formulario sin guardar, y un borrado que falla levanta un error específico en lugar de responder sin decir nada."
+          "Las subidas usan URL firmadas: el navegador manda los bytes directo al almacenamiento de objetos mientras el backend firma la petición y registra el resultado. Ese reparto deja dos huecos: dos commits simultáneos pueden contar dos veces el consumo de la organización, y un formulario abandonado antes de guardar deja objetos que nadie referencia.",
+          "Los dos se cerraron en el camino de escritura. Las claves de los objetos son únicas por colección, el commit verifica que el objeto exista antes de insertar, y la fila junto con la actualización del contador comparten una sola transacción protegida por un lock de Postgres. Una ruta de limpieza descarta las subidas que nunca se confirmaron, y la interfaz la dispara antes de cerrar un formulario sin guardar."
         ]
       },
       {
         "label": "Fechas de calendario",
         "title": "Un día es un día, no un instante",
         "texts": [
-          "Las fechas de scouting, los días de rodaje y campos similares significan un día del calendario de pared, pero se guardaban como instantes. Cualquiera con una zona horaria detrás de UTC las veía un día antes, y el desfase llegaba a la interfaz, a la exportación CSV y a los documentos generados, cada uno resolviéndolo distinto o no resolviéndolo.",
-          "El contrato se hizo explícito de extremo a extremo: la API transporta «YYYY-MM-DD», la base guarda DATE y helpers compartidos en backend y frontend parsean y serializan usando los componentes de calendario en UTC. Las consultas por rango cierran en el final del día y no en su medianoche, así una fila que alguna vez llegue con hora no queda fuera del último día de la ventana —ni, en la vista de un solo día, fuera de la ventana entera."
+          "Las fechas de scouting y los días de rodaje significan un día del calendario de pared, pero se guardaban como instantes, así que cualquiera detrás de UTC las veía un día antes: en la interfaz, en la exportación CSV y en los documentos generados por igual.",
+          "El contrato ahora es explícito de extremo a extremo: la API transporta «YYYY-MM-DD», la base guarda DATE y helpers compartidos parsean y serializan sobre componentes de calendario en UTC. Las consultas por rango cierran al final del día, así una fila que llegue con hora se mantiene dentro de la ventana."
         ]
       },
       {
         "label": "Documentos y envío",
         "title": "PDF, correo y ZIP como un solo pipeline",
         "texts": [
-          "Las call sheets, los deal memos y los releases son templates HTML que se renderizan a PDF en el servidor y se entregan por correo, así que un detalle de renderizado se convierte en una falla que ve el cliente. De ese camino salieron dos correcciones: los adjuntos ahora declaran codificación base64, porque el valor por defecto de 7 bits del transporte corrompe el contenido binario y producía PDF en blanco del lado del destinatario, y la redacción de los templates se corrigió donde describía algo distinto a quien estaba firmando.",
-          "El mismo pipeline se extendió en lugar de duplicarse. Las notas de aprobación con formato se guardan como templates del proyecto, se les resuelven los placeholders y pasan por un saneador antes de llegar a un correo o a una página pública de aprobación. La exportación masiva reutiliza el renderizador y envía los resultados a un ZIP, con tope de archivos, nombres de entrada saneados y manejo de cancelación para que una petición abortada detenga el trabajo en vez de dejarlo huérfano."
+          "Las call sheets, los deal memos y los releases son templates HTML que se renderizan a PDF en el servidor y se entregan por correo, así que un detalle de renderizado termina siendo algo que ve el destinatario. Los adjuntos ahora declaran codificación base64, ya que el valor por defecto de 7 bits del transporte corrompe el contenido binario.",
+          "El pipeline se extendió en lugar de duplicarse. Las notas de aprobación con formato se guardan como templates del proyecto, resuelven sus placeholders y pasan por un saneador antes de llegar a un correo o a una página pública de aprobación. La exportación masiva reutiliza el mismo renderizador y envía los resultados a un ZIP, con tope de archivos, nombres saneados y manejo de cancelación."
         ]
       },
       {
         "label": "Multi-tenancy y validación",
         "title": "Trabajar dentro de un contrato multi-tenant",
         "texts": [
-          "Toda entidad de la plataforma está aislada por organización, y los datos de producción además están acotados al proyecto, con verificación de pertenencia en cada petición. Los endpoints nuevos tenían que heredar esa forma y no volver a enunciarla: el selector de destinatarios, los adjuntos de aprobación, la ruta de limpieza y la descarga masiva resuelven el acceso a través de los guardas existentes de organización y proyecto antes de tocar datos.",
-          "El resto del contrato es igual de prescriptivo y se respetó en todo el trabajo: entradas validadas con schemas de Zod, el schema de Prisma como única fuente de verdad con una migración por cada cambio de modelo, paginación en los endpoints de listas, ninguna URL firmada persistida y cada texto visible agregado a los diccionarios en inglés y español en lugar de quedar hardcodeado."
+          "Toda entidad está aislada por organización, y los datos de producción además están acotados al proyecto, con verificación de pertenencia en cada petición. Los endpoints nuevos heredan esa forma en lugar de volver a enunciarla: el selector de destinatarios, los adjuntos de aprobación, la ruta de limpieza y la descarga masiva resuelven el acceso a través de los guardas existentes de organización y proyecto.",
+          "El resto del contrato se respetó en todo el trabajo: validación con Zod en las entradas, el schema de Prisma como única fuente de verdad con una migración por cada cambio de modelo, paginación en los endpoints de listas, ninguna URL firmada persistida y cada texto visible agregado a los diccionarios en inglés y español."
         ]
       }
     ],

@@ -29,7 +29,7 @@ const projects = [
             { label: "2026", color: "#0d6efd" }
         ],
         title: "Brainset — Production OS",
-        subtitle: "A multi-tenant SaaS that runs audiovisual productions end to end, hardened and connected so production teams can rely on it for daily work.",
+        subtitle: "Multi-tenant SaaS for audiovisual production companies, advanced from a feature-complete build toward a stable, production-ready MVP.",
         technologies: [
             "TypeScript",
             "Next.js 14 (App Router)",
@@ -45,99 +45,99 @@ const projects = [
             "AWS SES",
             "Puppeteer (PDF)"
         ],
-        description: `Brainset is a multi-tenant platform for audiovisual production companies — commercials, digital, film and music videos — covering calendar, tasks, schedules, crew, casting, locations, transport, vendors, call sheets, travel, creative and budget in one system. When the engagement started the product was feature-rich but not yet dependable: modules existed in isolation, file uploads accepted anything the browser sent, dates drifted by a day depending on the user's timezone, and PDFs arrived blank in the client's inbox. None of that is visible on a feature list, and all of it stops a production team from trusting the tool on a shoot day.
+        description: `Brainset is a multi-tenant platform for audiovisual production companies, covering calendar, tasks, crew, casting, locations, transport, vendors, call sheets, travel, creative and budget in one system. The platform arrived roughly 80–90% built: the modules already existed and worked. The remaining distance to production was connecting them, hardening the paths that carry real production documents, and closing the gaps that only surface under daily use on a shoot.
 
-The work targeted the paths that carry real production documents. File uploads got a single shared safety policy — extension, MIME and first-bytes signature checks enforced at every presign, commit, copy and promote path instead of eight per-module allowlists. Upload commits were made race-safe and quota-correct with unique S3 key constraints, Postgres advisory locks, existence verification against storage before writing a row, and a cleanup path for presigned uploads that were never committed. Calendar-day fields moved to Postgres DATE columns behind an explicit "YYYY-MM-DD" wire contract, which removed the off-by-one shift from location scout dates, exports and generated documents.
+My role was to take that base to a production-ready standard across five areas — upload security, storage integrity, call sheet distribution and approvals, crew onboarding, and calendar-date correctness. Twelve reviewed pull requests in about a month, roughly 3,700 lines across 88 files. Each task started from success criteria and a time estimate agreed with the client, and was validated in staging ahead of client approval for release.
 
-On top of that base came the features producers asked for: a recipient picker so a call sheet reaches exactly the chosen crew members, staged approval attachments with size ceilings that respect what an email provider will actually deliver, reusable rich-text approval notes rendered through a sanitizer, agency branding in the call sheet header, and crew onboarding that distinguishes a deal memo that was sent from one that was opened and signed — plus a single action that streams every signed deal memo of a project into a ZIP. Delivered as 12 reviewed pull requests over roughly a month, about 3,700 added lines across 88 files, each one scoped and accepted against agreed success criteria before merging to production.`,
+The client asked me to work with Claude as part of the delivery workflow: codebase exploration, implementation drafts, and review passes against the repository's multi-tenant conventions. Tasks were estimated with AI assistance, and most closed in less time than the estimate.`,
         general_details: [
             { label: "Client", value: "Brain Productions (Brainset)" },
             { label: "Date", value: "Aug 2026 – Sep 2026" },
+            { label: "Role", value: "Full-stack engineer — MVP stabilization toward production" },
             { label: "Category", value: "Full-Stack Development and Platform Hardening" },
+            { label: "AI tooling", value: "Claude, at client request — most tasks closed under estimate" },
             { label: "Website", value: { text: "brainset.io", url: "https://brainset.io" } }
         ],
         features: [
             {
                 iconPath: "bi bi-shield-lock",
-                title: "Executable-upload defense on every file surface",
-                description: `- One shared policy module replaced per-module allowlists, so a new upload surface inherits the rule instead of quietly reopening the hole.
+                title: "Hardened file uploads",
+                description: `- One shared policy replaced per-module allowlists, so every new upload surface inherits it.
 
-- Rejects files by extension and MIME, and inspects the first bytes for PE, ELF, Mach-O, Java class and shebang signatures, which is what catches a binary renamed to .pdf.
+- Checks extension, MIME and first-byte signatures — what catches a binary renamed to .pdf.
 
-- Enforced at presign, commit, copy and promote — validating only the presign would leave the back door of committing under a different filename.
-
-- Thumbnails are validated too, closing a path where a renamed binary passed the existence check and took the original file down with it.
-
-- The same rules run client-side for immediate feedback, without becoming the only line of defense.`,
+- Enforced at presign, commit, copy and promote, thumbnails included.`,
                 type: "Security"
             },
             {
                 iconPath: "bi bi-database-check",
                 title: "Upload integrity and storage accounting",
-                description: `- Unique constraints on stored object keys, so the same upload can never produce two rows.
+                description: `- Unique object keys and advisory locks keep concurrent uploads from double-counting an organization's usage.
 
-- Commit and cleanup are serialized with Postgres advisory locks inside the transaction that updates the shared storage counter, which keeps concurrent uploads from double-counting an organization's usage.
+- Objects are verified in storage before the database row is written.
 
-- The backend verifies the object actually exists in storage before creating its row, instead of trusting the client's word that the upload finished.
-
-- A dedicated cleanup path discards presigned uploads that were never committed, so a form abandoned before its first save stops leaving orphaned files behind.
-
-- Deletions that fail now raise instead of passing silently, which is what made earlier leftovers invisible.`,
+- Uploads abandoned before saving are cleaned up instead of left orphaned.`,
                 type: "Reliability"
             },
             {
                 iconPath: "bi bi-send-check",
                 title: "Call sheet distribution with recipient control",
-                description: `- Producers choose exactly who receives each call sheet: select or clear all, expand crew by department, and check people individually.
+                description: `- Producers pick recipients by department or individually, instead of sending to everyone.
 
-- Only checked recipients with a valid email are sent to, which ends the all-or-nothing send that leaked drafts to the whole crew.
+- Only selected crew with a valid email receive the send.
 
-- The automatic resend-to-bounces retry keeps its own behavior and deliberately bypasses the picker, so a failed delivery still reaches its original recipient.`,
+- Automatic bounce retries still reach their original recipient.`,
                 type: "Workflow"
             },
             {
                 iconPath: "bi bi-paperclip",
-                title: "Approval packets and reusable approval notes",
-                description: `- Supporting files can be staged on an approval round, then travel with the approval email and are consumed only once that email is actually sent.
+                title: "Approval packets and reusable notes",
+                description: `- Attachments stage on an approval round and travel with the approval email.
 
-- Per-file, per-round and per-message size ceilings are checked before the round opens, so an approval never fails at the last step for exceeding what the mail provider accepts.
+- Size ceilings are checked up front, so an approval never fails at the last step.
 
-- The approval note is written in a rich text editor and saved as a project-scoped template with placeholder resolution, so the same wording goes out every time; it renders through a sanitizer, keeping unsafe markup out of both the email and the public approval page.
-
-- Agency became a first-class project field, so its logo prints in the call sheet header alongside the production company's.`,
+- Rich-text notes save as project templates with placeholders, sanitized before send.`,
                 type: "Documents"
             },
             {
                 iconPath: "bi bi-file-earmark-zip",
-                title: "Crew onboarding visibility and bulk deal memo download",
-                description: `- A view timestamp on signed documents separates a deal memo that was sent from one that was actually opened, which is the difference a coordinator chases by phone.
+                title: "Crew onboarding and deal memos",
+                description: `- A view timestamp separates a deal memo that was sent from one that was opened.
 
-- The onboarding table reads the latest deal memo per crew member and shows status, sent, received and signed times, signer details and a per-member download.
+- Status, sent, received and signed times and signer details in one table.
 
-- One action renders every signed deal memo of a project and streams them into a ZIP, with a file cap, sanitized names and abort handling so a cancelled download does not leave the server working.`,
+- Every signed memo for a project downloads as a single ZIP.`,
                 type: "Workflow"
             },
             {
                 iconPath: "bi bi-calendar-check",
-                title: "Correctness fixes that were blocking daily use",
-                description: `- Location scout dates became true calendar days — Postgres DATE columns behind a "YYYY-MM-DD" wire contract with shared parse and format helpers — which removed the shift of one day that users saw in the UI, CSV exports and generated releases.
+                title: "Correctness fixes for daily use",
+                description: `- Calendar days moved to Postgres DATE behind a "YYYY-MM-DD" contract, removing an off-by-one across UI, exports and documents.
 
-- Calendar and date picker moved to a Sunday-first week, matching how production weeks are read, with visible labels going through the dictionary.
+- Sunday-first weeks, matching how a production reads a schedule.
 
-- PDF attachments stopped arriving blank: the mail transport defaulted to 7-bit encoding, which corrupts binary content, and now declares base64 explicitly.
-
-- Location document and photo uploaders gained drag-and-drop, keyboard access, clear format hints and count and size limits.`,
+- PDF attachments now declare base64, so they arrive intact.`,
                 type: "Bug Fixing"
+            },
+            {
+                iconPath: "bi bi-robot",
+                title: "AI-assisted delivery with Claude",
+                description: `- Client-requested workflow: Claude for codebase exploration, implementation drafts and review passes.
+
+- Every change reviewed against the repository's multi-tenant, Zod and Prisma conventions before opening a PR.
+
+- Most tasks closed in less time than their AI-assisted estimate.`,
+                type: "Delivery & Tooling"
             }
         ],
         architecture_design_items: [
             {
                 id: "file-safety",
                 label: "File safety",
-                title: "One upload policy instead of eight allowlists",
+                title: "One shared upload policy",
                 texts: [
-                    "Every module that accepts files — creative documents, crew, locations, moodboards, storyboards, travel, vendors, generic uploads — used to carry its own idea of what was acceptable. The failure mode of that shape is predictable: the ninth module is written without the rule. The policy was extracted into a single module that exposes the blocked extension and MIME sets, a filename-extension reader that trims the trailing dots and spaces an operating system ignores, a reusable Zod field for filename validation, and a signature check over the first bytes.",
-                    "The scope is stated honestly in the code: this is a policy check over the file's label plus a look at its leading bytes, not an antivirus. What it does buy is that the two ways into storage — the declared name and the declared MIME type — end at the same guarded object, and that a renamed binary is caught by content rather than by trust."
+                    "Eight modules accept files — creative documents, crew, locations, moodboards, storyboards, travel, vendors and generic uploads — each with its own notion of what was acceptable. The rule now lives in one module: blocked extension and MIME sets, a filename reader that trims the trailing dots and spaces an operating system ignores, a reusable Zod field, and a signature check over the first bytes.",
+                    "The scope is stated plainly in the code: a policy check over the file's label plus its leading bytes, not an antivirus. What it buys is that both routes into storage — declared name and declared MIME type — end at the same guarded object, and a renamed binary is caught by content rather than by trust."
                 ],
                 highlight: "",
                 image: brainsetLocationPhotosImg
@@ -147,8 +147,8 @@ On top of that base came the features producers asked for: a recipient picker so
                 label: "Upload integrity",
                 title: "Commits that survive races and abandoned forms",
                 texts: [
-                    "Uploads follow the presigned-URL pattern: the browser sends bytes straight to object storage and the backend only signs the request and records the result. That split leaves two gaps. Two commits arriving together can both add the same bytes to an organization's storage counter, and a user who uploads then closes the form without saving leaves objects nobody references.",
-                    "Both gaps were closed on the write path. Object keys are unique per collection, the commit verifies the object exists in storage before inserting, and the insert plus the counter update happen in one transaction guarded by a Postgres advisory lock, so quota and file-count checks see a consistent picture. A cleanup endpoint removes presigned uploads that were never committed, the UI forces that cleanup before an unsaved form closes, and deletions that fail now raise a specific error instead of returning quietly."
+                    "Uploads use presigned URLs: the browser sends bytes straight to object storage while the backend signs the request and records the result. That split leaves two gaps — concurrent commits can double-count an organization's storage, and a form abandoned before saving leaves objects nobody references.",
+                    "Both were closed on the write path. Object keys are unique per collection, the commit verifies the object exists in storage before inserting, and the row plus the counter update share one transaction guarded by a Postgres advisory lock. A cleanup route discards uploads that were never committed, and the UI triggers it before an unsaved form closes."
                 ],
                 highlight: "",
                 image: brainsetFileManagerImg
@@ -158,8 +158,8 @@ On top of that base came the features producers asked for: a recipient picker so
                 label: "Calendar dates",
                 title: "Days are days, not instants",
                 texts: [
-                    "Scout dates, shoot days and similar fields mean a day on a wall calendar, but they were stored as timestamps. Anyone whose timezone sat behind UTC saw them a day earlier, and the drift reached the UI, the CSV export and the generated release documents, each fixing it differently or not at all.",
-                    "The contract was made explicit end to end: the API carries \"YYYY-MM-DD\", the database stores DATE, and shared helpers on both backend and frontend parse and serialize using UTC calendar components. Range queries close on the end of the day rather than its midnight, so a row that ever arrives with a time component does not fall out of the last day of the window — or, in the single-day view, out of the window entirely."
+                    "Scout dates and shoot days mean a day on a wall calendar, but they were stored as timestamps, so anyone behind UTC saw them a day early — in the UI, the CSV export and the generated documents alike.",
+                    "The contract is now explicit end to end: the API carries \"YYYY-MM-DD\", the database stores DATE, and shared helpers parse and serialize on UTC calendar components. Range queries close on the end of the day, so a row carrying a time component stays inside the window."
                 ],
                 highlight: "",
                 image: brainsetCalendarImg
@@ -169,8 +169,8 @@ On top of that base came the features producers asked for: a recipient picker so
                 label: "Documents & delivery",
                 title: "PDF, email and ZIP as one pipeline",
                 texts: [
-                    "Call sheets, deal memos and releases are HTML templates rendered to PDF on the server and delivered by email, so a rendering detail becomes a client-facing failure. Two fixes came from that path: attachments now declare base64 transfer encoding, because the transport's 7-bit default corrupts binary content and produced blank PDFs on the recipient's side, and template wording was corrected where it described the wrong thing to the person signing.",
-                    "The same pipeline was extended rather than duplicated. Rich-text approval notes are stored as project-scoped templates, resolved for placeholders and passed through a sanitizer before reaching an email or a public approval page. Bulk export reuses the renderer and streams results into a ZIP, with a file cap, sanitized entry names and abort handling so a cancelled request stops the work instead of orphaning it."
+                    "Call sheets, deal memos and releases are HTML templates rendered to PDF on the server and delivered by email, so a rendering detail becomes something the recipient sees. Attachments now declare base64 transfer encoding, since the transport's 7-bit default corrupts binary content.",
+                    "The pipeline was extended rather than duplicated. Rich-text approval notes save as project templates, resolve their placeholders and pass through a sanitizer before reaching an email or a public approval page. Bulk export reuses the same renderer and streams into a ZIP, with a file cap, sanitized names and abort handling."
                 ],
                 highlight: "",
                 image: brainsetApprovalTemplateImg
@@ -180,8 +180,8 @@ On top of that base came the features producers asked for: a recipient picker so
                 label: "Tenancy & validation",
                 title: "Working inside a multi-tenant contract",
                 texts: [
-                    "Every entity in the platform is isolated by organization, and production data is additionally scoped to a project, with membership checked on each request. New endpoints had to inherit that shape rather than restate it — the recipient picker, the approval attachments, the cleanup route and the bulk download all resolve access through the existing tenant and project guards before touching data.",
-                    "The rest of the contract is just as prescriptive and was followed throughout: request inputs validated with Zod schemas, the Prisma schema as the single source of truth with a migration for every model change, pagination on list endpoints, no signed storage URL ever persisted, and every user-visible string added to the English and Spanish dictionaries instead of hardcoded."
+                    "Every entity is isolated by organization, and production data is additionally scoped to a project, with membership checked on each request. New endpoints inherit that shape rather than restate it — the recipient picker, the approval attachments, the cleanup route and the bulk download all resolve access through the existing tenant and project guards.",
+                    "The rest of the contract was followed throughout: Zod validation on inputs, the Prisma schema as the single source of truth with a migration per model change, pagination on list endpoints, no signed storage URL persisted, and every user-visible string added to the English and Spanish dictionaries."
                 ],
                 highlight: "",
                 image: brainsetAgencyClientImg

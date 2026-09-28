@@ -7,11 +7,21 @@ import Footer from './components/Footer';
 import SocialIcons from './components/SocialIcons';
 import './App.css';
 
+function getRouterBasename() {
+  const publicPath = (process.env.PUBLIC_URL || '').replace(/\/$/, '');
+  if (!publicPath) return undefined;
+  const { pathname } = window.location;
+  if (pathname === publicPath || pathname.startsWith(`${publicPath}/`)) {
+    return publicPath;
+  }
+  return undefined;
+}
+
 function AppShell() {
   const { t } = useLanguage();
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={getRouterBasename()}>
       <div className="App">
         <header className="site-topbar">
           <nav className="site-topbar-nav" aria-label={t('nav.primaryAria')}>
