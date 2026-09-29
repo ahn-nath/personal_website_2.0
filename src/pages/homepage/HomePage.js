@@ -27,8 +27,8 @@ const HomePage = () => {
       id: 'brainset-production-os',
       image: brainsetAuthImg,
       tags: [
-        { label: 'WEB / SAAS', color: '#0ACF83' },
-        { label: '2026', color: '#0d6efd' },
+        { label: 'WEB / SAAS', color: '#C19707' },
+        { label: '2026', color: '#5170FF' },
       ],
       title: t('home.gallery.projects.brainset-production-os'),
     },
@@ -36,8 +36,8 @@ const HomePage = () => {
       id: 'credit-repair-system',
       image: creditUsImg,
       tags: [
-        { label: 'API', color: '#0ACF83' },
-        { label: '2024', color: '#0d6efd' },
+        { label: 'API', color: '#C19707' },
+        { label: '2024', color: '#5170FF' },
       ],
       title: t('home.gallery.projects.credit-repair-system'),
     },
@@ -45,8 +45,8 @@ const HomePage = () => {
       id: 'csr-scheduler',
       image: csrSchedulerImg,
       tags: [
-        { label: 'WEB', color: '#BB0087' },
-        { label: '2025', color: '#0d6efd' },
+        { label: 'WEB', color: '#282C34' },
+        { label: '2025', color: '#5170FF' },
       ],
       title: t('home.gallery.projects.csr-scheduler'),
     },
@@ -54,8 +54,8 @@ const HomePage = () => {
       id: 'research-imbalances-on-wikipedia',
       image: researchImbalancesImg,
       tags: [
-        { label: 'TOOLS & SCRIPTING', color: '#0ACF83' },
-        { label: '2024', color: '#0d6efd' },
+        { label: 'TOOLS & SCRIPTING', color: '#C19707' },
+        { label: '2024', color: '#5170FF' },
       ],
       title: t('home.gallery.projects.research-imbalances-on-wikipedia'),
     },

@@ -9,6 +9,12 @@ export default function Footer() {
   return (
     <footer className="site-footer">
       <div className="site-footer-inner">
+        <img
+          src={`${process.env.PUBLIC_URL}/logo_white_mark.png`}
+          alt=""
+          aria-hidden="true"
+          className="site-footer-logo"
+        />
         <p className="site-footer-credit">
           {t('footer.credit')}{' '}
           <span className="site-footer-name">Nathaly Toledo</span>

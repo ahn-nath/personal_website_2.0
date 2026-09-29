@@ -19,7 +19,10 @@ const ProjectCard = ({ id, image, tags, title, onOpenModal, openModalOnClick = f
             <span 
               key={index}
               className="badge rounded-pill me-2"
-              style={{ backgroundColor: tag.color }}
+              style={{
+                backgroundColor: tag.color,
+                color: '#FAFFFC',
+              }}
             >
               {tag.label}
             </span>

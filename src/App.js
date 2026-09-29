@@ -24,6 +24,13 @@ function AppShell() {
     <BrowserRouter basename={getRouterBasename()}>
       <div className="App">
         <header className="site-topbar">
+          <Link to="/" className="site-topbar-brand" aria-label="Nathaly Toledo">
+            <img
+              src={`${process.env.PUBLIC_URL}/logo_horizontal.svg`}
+              alt="Nathaly Toledo"
+              className="site-topbar-logo"
+            />
+          </Link>
           <nav className="site-topbar-nav" aria-label={t('nav.primaryAria')}>
             <Link to="/" className="nav-link text-dark">{t('nav.home')}</Link>
           </nav>

@@ -5,7 +5,7 @@
   /* layer 1: the image, layer 2: solid color */
   background-image: 
     url('../../../media/laptop-bg-placeholder.jpg'), /* TODO: in the future we may make this dynamic */
-    linear-gradient(#1f328a, #2d47ba, #c19703);
+    linear-gradient(#282C34, #5170FF, #C19707);
   background-size: cover,        /* image covers full area */
                    auto;         /* gradient doesn’t need sizing */
   background-position: center;   /* center the image */
@@ -19,7 +19,7 @@
 
 /* Gradients on the heading */
 .gradient-text {
-    background: linear-gradient(135deg, #ffffff, #6ec1e4);  
+    background: linear-gradient(135deg, #FAFFFC, #5170FF);  
     -webkit-background-clip: text;  
     -webkit-text-fill-color: transparent;
 }

@@ -25,8 +25,8 @@ const projects = [
         id: "brainset-production-os",
         image: brainsetAuthImg,
         tags: [
-            { label: "WEB / SAAS", color: "#0ACF83" },
-            { label: "2026", color: "#0d6efd" }
+            { label: "WEB / SAAS", color: "#C19707" },
+            { label: "2026", color: "#5170FF" }
         ],
         title: "Brainset — Production OS",
         subtitle: "Multi-tenant SaaS for audiovisual production companies, advanced from a feature-complete build toward a stable, production-ready MVP.",
@@ -192,8 +192,8 @@ The client asked me to work with Claude as part of the delivery workflow: codeba
                 id: 1,
                 image: brainsetCrewOnboardingImg,
                 tags: [
-                    { label: "LIST VIEW", color: "#BB0087" },
-                    { label: "2026", color: "#0d6efd" }
+                    { label: "LIST VIEW", color: "#282C34" },
+                    { label: "2026", color: "#5170FF" }
                 ],
                 title: "Crew onboarding with deal memo status"
             },
@@ -201,8 +201,8 @@ The client asked me to work with Claude as part of the delivery workflow: codeba
                 id: 2,
                 image: brainsetApprovalRoundImg,
                 tags: [
-                    { label: "MODAL", color: "#BB0087" },
-                    { label: "2026", color: "#0d6efd" }
+                    { label: "MODAL", color: "#282C34" },
+                    { label: "2026", color: "#5170FF" }
                 ],
                 title: "Approval round with attachments and note selector"
             },
@@ -210,8 +210,8 @@ The client asked me to work with Claude as part of the delivery workflow: codeba
                 id: 3,
                 image: brainsetApprovalTemplateImg,
                 tags: [
-                    { label: "TEMPLATE", color: "#BB0087" },
-                    { label: "2026", color: "#0d6efd" }
+                    { label: "TEMPLATE", color: "#282C34" },
+                    { label: "2026", color: "#5170FF" }
                 ],
                 title: "Reusable approval note with resolved placeholders"
             },
@@ -219,8 +219,8 @@ The client asked me to work with Claude as part of the delivery workflow: codeba
                 id: 4,
                 image: brainsetLocationPhotosImg,
                 tags: [
-                    { label: "UPLOAD", color: "#BB0087" },
-                    { label: "2026", color: "#0d6efd" }
+                    { label: "UPLOAD", color: "#282C34" },
+                    { label: "2026", color: "#5170FF" }
                 ],
                 title: "Photo uploader with enforced formats and limits"
             },
@@ -228,8 +228,8 @@ The client asked me to work with Claude as part of the delivery workflow: codeba
                 id: 5,
                 image: brainsetLocationDocumentsImg,
                 tags: [
-                    { label: "UPLOAD", color: "#BB0087" },
-                    { label: "2026", color: "#0d6efd" }
+                    { label: "UPLOAD", color: "#282C34" },
+                    { label: "2026", color: "#5170FF" }
                 ],
                 title: "Insurance documents restricted to PDF"
             },
@@ -237,8 +237,8 @@ The client asked me to work with Claude as part of the delivery workflow: codeba
                 id: 6,
                 image: brainsetCalendarImg,
                 tags: [
-                    { label: "CALENDAR", color: "#BB0087" },
-                    { label: "2026", color: "#0d6efd" }
+                    { label: "CALENDAR", color: "#282C34" },
+                    { label: "2026", color: "#5170FF" }
                 ],
                 title: "Sunday-first production calendar"
             },
@@ -246,8 +246,8 @@ The client asked me to work with Claude as part of the delivery workflow: codeba
                 id: 7,
                 image: brainsetFileManagerImg,
                 tags: [
-                    { label: "STORAGE", color: "#BB0087" },
-                    { label: "2026", color: "#0d6efd" }
+                    { label: "STORAGE", color: "#282C34" },
+                    { label: "2026", color: "#5170FF" }
                 ],
                 title: "File manager with project and organization usage"
             },
@@ -255,8 +255,8 @@ The client asked me to work with Claude as part of the delivery workflow: codeba
                 id: 8,
                 image: brainsetAgencyClientImg,
                 tags: [
-                    { label: "BRANDING", color: "#BB0087" },
-                    { label: "2026", color: "#0d6efd" }
+                    { label: "BRANDING", color: "#282C34" },
+                    { label: "2026", color: "#5170FF" }
                 ],
                 title: "Agency as a first-class client with its own logo"
             }
@@ -267,8 +267,8 @@ The client asked me to work with Claude as part of the delivery workflow: codeba
         id: "credit-repair-system",
         image: "https://cdn.bootstrapstudio.io/placeholders/1400x800.png",
         tags: [
-            { label: "API", color: "#0ACF83" },
-            { label: "2024", color: "#0d6efd" }
+            { label: "API", color: "#C19707" },
+            { label: "2024", color: "#5170FF" }
         ],
         title: "Credit Repair System",
         subtitle: "API for a credit management and dispute resolution platform that aids clients in improving their credit scores.",
@@ -359,24 +359,24 @@ The client asked me to work with Claude as part of the delivery workflow: codeba
             {
                 image: "https://cdn.bootstrapstudio.io/placeholders/1400x800.png",
                 tags: [
-                    { label: "API", color: "#0ACF83" },
-                    { label: "2024", color: "#0d6efd" }
+                    { label: "API", color: "#C19707" },
+                    { label: "2024", color: "#5170FF" }
                 ],
                 title: "Lorem Ipsum"
             },
             {
                 image: "https://cdn.bootstrapstudio.io/placeholders/1400x800.png",
                 tags: [
-                    { label: "WEB INTEGRATION", color: "#BB0087" },
-                    { label: "2024", color: "#0d6efd" }
+                    { label: "WEB INTEGRATION", color: "#282C34" },
+                    { label: "2024", color: "#5170FF" }
                 ],
                 title: "Lorem Ipsum"
             },
             {
                 image: "https://cdn.bootstrapstudio.io/placeholders/1400x800.png",
                 tags: [
-                    { label: "AUTOMATION", color: "#0ACF83" },
-                    { label: "2024", color: "#0d6efd" }
+                    { label: "AUTOMATION", color: "#C19707" },
+                    { label: "2024", color: "#5170FF" }
                 ],
                 title: "Lorem Ipsum"
             }
@@ -430,8 +430,8 @@ The client asked me to work with Claude as part of the delivery workflow: codeba
         id: "csr-scheduler",
         image: "https://cdn.bootstrapstudio.io/placeholders/1400x800.png",
         tags: [
-            { label: "WEB", color: "#BB0087" },
-            { label: "2025", color: "#0d6efd" }
+            { label: "WEB", color: "#282C34" },
+            { label: "2025", color: "#5170FF" }
         ],
         title: "CSR Scheduler: Job Runner Interface Replacement",
         subtitle: "Desktop web MVP that replaces a FileMaker Pro scheduling tool so installation managers can assign crews across multiple branches with parity-plus speed and clarity.",
@@ -559,8 +559,8 @@ The core loop mirrors the field operation: each evening a scheduling manager fil
                 id: 1,
                 image: "https://cdn.bootstrapstudio.io/placeholders/1400x800.png",
                 tags: [
-                    { label: "LIST VIEW", color: "#BB0087" },
-                    { label: "2025", color: "#0d6efd" }
+                    { label: "LIST VIEW", color: "#282C34" },
+                    { label: "2025", color: "#5170FF" }
                 ],
                 title: "Job List View"
             },
@@ -568,8 +568,8 @@ The core loop mirrors the field operation: each evening a scheduling manager fil
                 id: 2,
                 image: "https://cdn.bootstrapstudio.io/placeholders/1400x800.png",
                 tags: [
-                    { label: "DETAIL", color: "#0ACF83" },
-                    { label: "2025", color: "#0d6efd" }
+                    { label: "DETAIL", color: "#C19707" },
+                    { label: "2025", color: "#5170FF" }
                 ],
                 title: "Job Detail — Itemized materials & labor"
             },
@@ -577,8 +577,8 @@ The core loop mirrors the field operation: each evening a scheduling manager fil
                 id: 3,
                 image: "https://cdn.bootstrapstudio.io/placeholders/1400x800.png",
                 tags: [
-                    { label: "PDF", color: "#0d6efd" },
-                    { label: "2025", color: "#0ACF83" }
+                    { label: "PDF", color: "#5170FF" },
+                    { label: "2025", color: "#C19707" }
                 ],
                 title: "Floor Plan PDF in detail drawer"
             }
@@ -593,8 +593,8 @@ The core loop mirrors the field operation: each evening a scheduling manager fil
         id: "research-imbalances-on-wikipedia",
         image: "https://cdn.bootstrapstudio.io/placeholders/1400x800.png",
         tags: [
-            { label: "WEB INTEGRATION", color: "#BB0087" },
-            { label: "2024", color: "#0d6efd" }
+            { label: "WEB INTEGRATION", color: "#282C34" },
+            { label: "2024", color: "#5170FF" }
         ],
         // NOTE: How can we have rich text with strong tags and line breaks in the description, or HTML syntax 
         title: "Research Imbalances in Translation Between Languages on Wikipedia",
