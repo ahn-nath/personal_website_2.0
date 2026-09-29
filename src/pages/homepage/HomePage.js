@@ -1,5 +1,6 @@
 import Header from './components/Header';
 import AboutSection from './components/About';
+import Slogan from './components/Slogan';
 import ServicesSection from './components/Services';
 import WorkGallery from './components/WorkGallery';
 import TestimonialsSection from './components/Testimonials';
@@ -64,19 +65,23 @@ const HomePage = () => {
   return (
     <div className="homepage-content">
       <Header />
+
       <AboutSection />
+      <Slogan />
       <ServicesSection
         title={t('home.services.title')}
         services={services}
         showIcon={true}
         description={t('home.services.description')}
       />
+
       <WorkGallery
         title={t('home.gallery.title')}
         projects={projects}
         openModalOnClick={false}
         description={t('home.gallery.description')}
       />
+      
       <TestimonialsSection />
     </div>
   );

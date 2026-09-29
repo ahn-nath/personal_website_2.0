@@ -53,6 +53,53 @@ h1, h2, h3, h4 {
   text-transform: none;
 }
 
+.slogan-band {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 3.25rem clamp(1.25rem, 4vw, 3rem);
+  background: #f1f1f1; /*#282C34;*/
+  border-bottom: 1px solid rgba(193, 151, 7, 0.45);
+}
+
+.slogan-text {
+  margin: 0;
+  max-width: 18ch;
+  text-align: center;
+  font-size: clamp(2.6rem, 6vw, 4.75rem);
+  line-height: 1.05;
+  color: rgb(40, 44, 52);
+}
+
+.slogan-accent {
+  color: #C19707;
+  font-family: 'Montserrat';
+  text-transform: uppercase;
+  font-size: clamp(2.6rem, 6vw, 2.75rem);
+  font-weight: 700;
+}
+
+.slogan-rule {
+  flex: 0 1 7rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C19707);
+}
+
+.slogan-rule-end {
+  background: linear-gradient(90deg, #C19707, transparent);
+}
+
+@media (max-width: 575.98px) {
+  .slogan-band {
+    padding: 2.4rem 1.25rem;
+  }
+
+  .slogan-rule {
+    display: none;
+  }
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -305,7 +352,7 @@ h1, h2, h3, h4 {
 .testimonials {
     padding-top: 7rem;
     padding-bottom: 7rem;
-    background-color: #FAFFFC !important;
+    background-color: #f1f1f1 !important;
 }
 
 .card{
@@ -387,6 +434,9 @@ h1, h2, h3, h4 {
 }
 
 .lang-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   border: none;
   background: transparent;
   color: rgba(40, 44, 52, 0.62);
@@ -396,6 +446,14 @@ h1, h2, h3, h4 {
   padding: 0.2rem 0.4rem;
   cursor: pointer;
   line-height: 1;
+}
+
+.lang-flag {
+  display: block;
+  width: 1.15rem;
+  height: auto;
+  border-radius: 1px;
+  box-shadow: 0 0 0 1px rgba(40, 44, 52, 0.2);
 }
 
 .lang-toggle-btn.is-active {
